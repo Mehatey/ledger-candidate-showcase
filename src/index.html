@@ -1195,7 +1195,7 @@ p,.lede,.tourcard p,.empty p{text-wrap:pretty}
 .review-mode button{align-items:center;border-radius:8px;color:var(--ink-2);display:flex;font-size:13px;gap:7px;justify-content:center;min-height:40px;transition:background 180ms var(--spring),color 180ms var(--spring)}
 .review-mode button:hover{color:var(--ink)}
 .review-mode button[aria-pressed="true"]{background:var(--ink);color:var(--panel);font-weight:650}
-.review-stage{position:relative}.rail-grip{bottom:0;cursor:col-resize;position:absolute;right:calc(var(--review-rail-width,400px) + 10px);top:0;width:20px;z-index:4}.rail-grip::after{background:var(--hairline);content:"";inset:0 9px;position:absolute;transition:background 160ms var(--ease),width 160ms var(--ease)}.rail-grip:hover::after,.rail-grip:focus-visible::after{background:var(--acid);width:3px}.rail-grip:focus-visible{outline:none}
+.review-stage{position:relative}.rail-grip{bottom:0;cursor:col-resize;position:absolute;right:calc(var(--review-rail-width,400px) + 10px);top:0;width:20px;z-index:4}.rail-grip::after{background:var(--hairline);content:"";inset:0 9px;position:absolute;transform:scaleX(1);transition:background 160ms var(--ease),transform 160ms var(--ease)}.rail-grip:hover::after,.rail-grip:focus-visible::after{background:var(--acid);transform:scaleX(3)}.rail-grip:focus-visible{outline:none}
 .evidence-composer{background:var(--panel);border:1px solid var(--hairline);border-radius:12px;padding:13px 14px}
 .evidence-composer header{align-items:center;display:flex;justify-content:space-between}
 .evidence-composer header strong{font-size:13px}
@@ -1318,7 +1318,8 @@ p,.lede,.tourcard p,.empty p{text-wrap:pretty}
 /* Final queue and decision-room refinement. */
 .brand.compact{gap:0}.brand.compact .mark{width:26px;height:26px}.header-actions{align-items:center;display:flex;gap:8px}.header-actions .queue-user{margin-left:0}.queue-nav{height:76px;padding:0 36px}.queue-main{max-width:1280px;padding:42px 36px 64px}.queue-heading{gap:40px}.queue-heading h1{font-size:34px;letter-spacing:-.03em}.queue-heading p{font-size:14px;line-height:1.55}.queue-toolbar{gap:12px;margin-top:28px}.queue-search{max-width:360px}.queue-filters{padding:4px;gap:3px}.queue-filters button{min-height:38px;padding:0 13px}.queue-filters button[aria-pressed="true"]{background:var(--panel);box-shadow:var(--shadow-sm);color:var(--ink);font-weight:650}.queue-filter-count{color:var(--ink-3);font-family:var(--mono);font-size:10px;margin-left:3px}.queue-list{margin-top:18px}.queue-list-head{grid-template-columns:minmax(320px,1.5fr) 220px 210px 110px 28px;padding:13px 20px}.queue-row{grid-template-columns:minmax(320px,1.5fr) 220px 210px 110px 28px;min-height:96px;padding:14px 20px}.queue-materials{align-items:center;display:flex;gap:10px}.materials-meter{align-items:center;display:flex;gap:5px}.materials-meter i{border:1px solid var(--hairline-strong);border-radius:50%;display:grid;height:14px;place-items:center;width:14px}.materials-meter i.ok{background:var(--go);border-color:var(--go);color:#fff}.materials-meter i.missing{border-color:var(--hold);color:var(--hold)}.materials-meter svg{height:9px;width:9px}.queue-materials strong{font-size:11.5px}.queue-materials span{font-size:11px}.queue-nav-context{display:none}.queue-status-note{color:var(--ink-3);font-size:12px;margin-top:12px}.topbar{height:68px;padding:0 28px}.topbar .brand{margin-left:2px}.review-summary{min-height:104px}.review-summary .summary-person{padding:18px}.artifact-panel{min-height:500px}.tourfab{display:none!important}.anchor{min-height:38px;opacity:0;transform:translateY(-2px);transition:opacity 160ms var(--ease),transform 160ms var(--ease)}.anchor.idle{display:block!important}.anchor:not(.idle){opacity:1;transform:none}.crit:focus-within .anchor.idle,.crit:hover .anchor.idle{opacity:.7;transform:none}.crit .val:empty{display:none}.rollup .n{min-width:46px}.cal-nav{height:76px;padding:0 36px}.cal-main{max-width:1280px;padding:42px 36px 64px}.cal-tabs{border-bottom:1px solid var(--hairline);display:flex;gap:22px;margin:28px 0 22px}.cal-tabs button{border-bottom:2px solid transparent;color:var(--ink-2);font-size:13px;min-height:40px;padding:0 2px}.cal-tabs button[aria-selected="true"]{border-color:var(--acid);color:var(--ink);font-weight:650}.cal-readiness{border-top:1px solid var(--hairline);margin-top:16px;padding-top:15px}.cal-readiness .head{align-items:baseline;display:flex;justify-content:space-between}.cal-readiness strong{font-size:13px}.cal-readiness span{font-family:var(--mono);font-size:11px}.cal-readiness .track{background:var(--panel-2);border-radius:99px;height:6px;margin-top:9px;overflow:hidden}.cal-readiness .track i{background:var(--acid);display:block;height:100%;transition:width 180ms var(--ease)}.cal-readiness p{color:var(--ink-3);font-size:11px;line-height:1.45;margin-top:9px}.cal-score span{white-space:nowrap}.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.compare-picker{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.compare-picker button{border:1px solid var(--hairline-strong);border-radius:7px;color:var(--ink-2);font-size:12px;min-height:36px;padding:0 10px}.compare-picker button[aria-pressed="true"]{background:var(--acid-dim);border-color:var(--acid-line);color:var(--ink);font-weight:650}.compare-card{background:var(--panel);border:1px solid var(--hairline);border-radius:14px;padding:18px}.compare-card header{align-items:center;border-bottom:1px solid var(--hairline);display:flex;gap:10px;padding-bottom:14px}.compare-card header img{border-radius:9px;height:42px;width:42px}.compare-card header strong{display:block;font-size:15px}.compare-card header span{color:var(--ink-2);display:block;font-size:12px;margin-top:2px}.compare-facts{display:grid;gap:12px;margin-top:16px}.compare-facts div{display:flex;justify-content:space-between;gap:16px}.compare-facts span{color:var(--ink-3);font-size:12px}.compare-facts strong{font-size:12px;text-align:right}.compare-card p{background:var(--panel-2);border-radius:8px;color:var(--ink-2);font-size:12px;line-height:1.5;margin-top:16px;padding:11px}.decision-record{background:var(--panel);border:1px solid var(--hairline);border-radius:14px;padding:18px}.decision-record p{color:var(--ink-2);font-size:13px;line-height:1.55;max-width:62ch}.decision-record ul{display:grid;gap:8px;list-style:none;margin-top:16px}.decision-record li{align-items:center;border-bottom:1px solid var(--hairline);display:flex;font-size:13px;justify-content:space-between;padding:10px 0}.decision-record li:last-child{border-bottom:0}@media(max-width:900px){.queue-nav,.cal-nav{padding:0 18px}.queue-main,.cal-main{padding:30px 18px 48px}.queue-list-head{display:none}.queue-row{grid-template-columns:minmax(0,1fr) 154px 28px;gap:14px;min-height:90px;padding:13px 14px}.queue-materials,.queue-submitted{display:none}.queue-heading{gap:20px}.queue-toolbar{margin-top:22px}.compare-grid{grid-template-columns:1fr}.header-actions .system-label{display:none}}@media(max-width:600px){.queue-nav,.cal-nav{height:64px;padding:0 14px}.queue-main,.cal-main{padding:26px 14px 40px}.queue-heading h1{font-size:27px}.queue-heading p{font-size:13px}.queue-heading{gap:18px}.queue-stats{padding-top:16px}.queue-toolbar{gap:8px}.queue-search{max-width:none}.queue-filters button{min-height:38px;padding:0 8px;font-size:11px}.queue-filter-count{display:none}.queue-row{grid-template-columns:minmax(0,1fr) auto 24px;gap:9px;min-height:82px;padding:10px 12px}.queue-candidate-copy strong{font-size:13.5px}.queue-state{font-size:11px}.queue-state i{height:7px;width:7px}.header-actions{gap:6px}.header-actions .kbtn{padding:0 9px}.topbar{height:64px;padding:0 14px;gap:8px}.topbar .pager{margin-left:auto}.topbar .pager .count{font-size:10px}.topbar .backbtn .hidem{display:none}.topbar .header-actions .kbtn{padding:0 9px}.topbar .header-actions .system-label{display:none}.review-summary .summary-person{padding:14px}.artifact-panel{min-height:0}.cal-tabs{gap:18px;margin:20px 0 16px}.cal-tabs button{font-size:12px}.cal-kpi{padding:0 10px}.cal-kpi strong{font-size:18px}.cal-alert{gap:8px}.cal-alert p{font-size:11.5px}.cal-alert .kbtn{padding:0 9px}.compare-picker{display:grid;grid-template-columns:1fr 1fr}.compare-picker button{min-width:0;padding:0 7px}.compare-card{padding:14px}}
 .cal-readiness{border-top:0;margin:0;padding:16px 18px;border-bottom:1px solid var(--hairline)}.cal-readiness>div{align-items:baseline;display:flex;justify-content:space-between;gap:12px}.cal-readiness>div span{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}.cal-readiness>div strong{font-size:18px}.cal-readiness>i{display:block;height:5px;background:var(--panel-2);border-radius:99px;overflow:hidden;margin:10px 0 8px}.cal-readiness>i>b{display:block;height:100%;background:var(--acid);border-radius:inherit}.cal-readiness p{margin:0}.compare-card .compare-person{display:flex;align-items:center;gap:12px;margin:12px 0 18px}.compare-card .compare-person img{width:48px!important;height:48px!important;max-width:48px!important;object-fit:cover;border-radius:12px}.compare-card .compare-person h2{font-size:20px;margin:0}.compare-card .compare-person p{background:none;margin:3px 0 0;padding:0;color:var(--ink-3)}.compare-card dl{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 18px}.compare-card dl>div{border:1px solid var(--hairline);border-radius:10px;padding:11px}.compare-card dt{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}.compare-card dd{margin:7px 0 0;font-size:13px}.compare-card .compare-evidence{border-top:1px solid var(--hairline);padding-top:14px}.compare-card .compare-evidence>p{background:none;margin:8px 0;padding:0}.decision-list{border-top:1px solid var(--hairline);margin:18px 0}.decision-list>div{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:16px;padding:13px 0;border-bottom:1px solid var(--hairline);align-items:center}.queue-guide{background:var(--panel);border:1px solid var(--hairline);border-radius:14px;margin-top:26px;max-width:740px;overflow:hidden}.queue-guide-toggle{align-items:center;display:flex;gap:10px;min-height:60px;padding:10px 14px;text-align:left;width:100%}.guide-orb{align-items:center;background:var(--acid-dim);border:1px solid var(--acid-line);border-radius:50%;color:var(--acid);display:grid;height:32px;place-items:center;width:32px}.guide-orb svg{height:16px;width:16px}.queue-guide-toggle b{display:block;font-size:13px}.queue-guide-toggle small{color:var(--ink-3);display:block;font-size:11px;margin-top:2px}.guide-state{color:var(--ink-3);font-size:11px}.queue-guide-body{border-top:1px solid var(--hairline);padding:14px}.queue-guide-body>p{color:var(--ink-2);font-size:14px;line-height:1.55;margin:0;min-height:44px;max-width:66ch}.guide-caret{border-right:1px solid var(--acid);display:inline-block;height:1em;margin-left:2px;vertical-align:-2px;animation:guideblink .8s steps(1,end) infinite}.queue-guide-actions{display:flex;gap:8px;margin-top:14px}.guide-primary,.guide-secondary{border-radius:8px;font-size:12px;font-weight:650;min-height:36px;padding:0 12px}.guide-primary{background:var(--acid);color:var(--canvas)}.guide-secondary{border:1px solid var(--hairline-strong);color:var(--ink-2)}.guide-disclaimer{color:var(--ink-3);display:block;font-size:10.5px;line-height:1.45;margin-top:12px}.compare-guide{align-items:flex-start;background:var(--panel-2);border-left:2px solid var(--acid);display:flex;gap:10px;margin:0 0 16px;padding:12px 14px}.compare-guide .guide-orb{height:28px;width:28px;flex:none}.compare-guide b{font-size:12px}.compare-guide p{color:var(--ink-2);font-size:12px;line-height:1.5;margin:4px 0 0;max-width:72ch}@keyframes guideblink{50%{opacity:0}}@media(max-width:600px){.queue-guide{margin-top:18px}.queue-guide-body>p{font-size:13px}.queue-guide-actions{align-items:stretch;flex-direction:column}.guide-primary,.guide-secondary{width:100%}}
-.brand.compact .mark{background:none!important;box-shadow:none!important;color:#0b5cff;height:22px;width:22px}.header-actions .hidem,.queue-user-copy{display:none}.nav-link{align-items:center;border-radius:7px;color:var(--ink-2);display:flex;font-size:12px;gap:6px;min-height:36px;padding:0 10px}.nav-link:hover{background:var(--panel-2);color:var(--ink)}.nav-link.active{color:var(--ink);font-weight:650}.queue-nav,.cal-nav{gap:8px}.queue-nav .brand,.cal-nav .brand{margin-right:4px}.materials-meter{display:contents}.materials-missing{color:var(--hold);font-size:11px;line-height:1.35;white-space:normal}.queue-materials{gap:0;min-width:0}.queue-materials>span:last-child{color:var(--ink-3);font-size:11px;line-height:1.35}.queue-materials>span:last-child:empty{display:none}.queue-list-head,.queue-row{grid-template-columns:minmax(320px,1.6fr) 220px 190px 110px 28px}.queue-heading{margin-bottom:4px}.queue-status-note{margin-top:10px}.cal-head{margin-bottom:4px}.cal-head h1{margin:0}.cal-head p{margin-top:10px}.cal-alert{margin:24px 0}.cal-tabs{margin-top:24px}.review-stage{gap:20px}.topbar .header-actions .queue-user{padding:0}.topbar .header-actions .queue-user-avatar{height:32px;width:32px}.nav-home{gap:6px}
+.brand.compact .mark{background:none!important;box-shadow:none!important;color:#0b5cff;height:22px;width:22px}.header-actions .hidem,.queue-user-copy{display:none}.nav-link{align-items:center;border-radius:7px;color:var(--ink-2);display:flex;font-size:12px;gap:6px;min-height:36px;padding:0 10px}.nav-link:hover{background:var(--panel-2);color:var(--ink)}.nav-link.active{background:var(--panel-2);color:var(--ink);font-weight:650}.queue-nav,.cal-nav{gap:8px}.queue-nav .brand,.cal-nav .brand{margin-right:4px}.design-link{justify-content:center;padding:0!important;width:36px}.design-link.active{background:var(--panel-2);color:var(--ink)}.materials-meter{display:contents}.materials-missing{color:var(--hold);font-size:11px;line-height:1.35;white-space:normal}.queue-materials{gap:0;min-width:0}.queue-materials>span:last-child{color:var(--ink-3);font-size:11px;line-height:1.35}.queue-materials>span:last-child:empty{display:none}.queue-list-head,.queue-row{grid-template-columns:minmax(320px,1.6fr) 220px 190px 110px 28px}.queue-heading{margin-bottom:4px}.queue-status-note{margin-top:10px}.queue-section-head{align-items:flex-end;display:flex;gap:18px;margin-top:34px}.queue-section-head h2{font-family:var(--sans);font-size:18px;font-weight:650;letter-spacing:-.02em}.queue-section-head p{color:var(--ink-3);font-size:11.5px;margin-bottom:1px}.queue-section-head+.queue-toolbar{margin-top:15px}.cal-head{margin-bottom:4px}.cal-head h1{margin:0}.cal-head p{margin-top:10px}.cal-alert{margin:24px 0}.cal-tabs{margin-top:24px}.review-stage{gap:20px}.topbar .header-actions .queue-user{padding:0}.topbar .header-actions .queue-user-avatar{height:32px;width:32px}.nav-home{gap:6px}.cal-note{border:1px solid var(--acid-line);border-left-width:1px}.compare-guide{border:1px solid var(--acid-line);border-radius:10px}.mobile-review-dock{display:none!important}
+@media(min-width:601px) and (max-width:1200px){.artifact-panel{height:clamp(500px,calc(100vh - 180px),640px)}}
 </style>
 </head>
 <body>
@@ -1767,7 +1768,7 @@ function LiveDemo({cand,onNotice,onOpenRepository}){
       <Empty icon={<I.eye/>} title="No live demo linked"
         reviewerMessage="This candidate submitted a repository but never deployed a preview. You can still read the code, but you cannot see it run inside Ledger."
         promptLabel="Candidate view of this same gap:"
-        candidatePrompt="“Deploy a preview. Reviewers who can run it spend longer with your work.”"/>
+        candidatePrompt="Deploy a preview so reviewers can inspect the running experience alongside your source."/>
     );
   }
   return (
@@ -1819,7 +1820,7 @@ function Loom({cand,onNotice}){
       <Empty tour="empty" icon={<I.video/>} title="No walkthrough attached"
         reviewerMessage={<Fragment>A walkthrough is the fastest way to understand <i>how</i> a candidate thinks. Without one you are inferring intent from code alone, which is slower and less fair to them.</Fragment>}
         promptLabel="Candidate view of this same gap:"
-        candidatePrompt="“Add a three minute walkthrough. Submissions with one advance far more often.”"/>
+        candidatePrompt="Add a three minute walkthrough so reviewers can understand the decisions behind your build."/>
     );
   }
   return (
@@ -2343,7 +2344,7 @@ function Review({idx,setIdx,onBack,onSystem,onCalibrate,a11y,reviews,setReviews}
   useEffect(()=>{
     setFocusRow(0); setSections({screens:false,walkthrough:false,stack:false});
     setArtifact("preview"); setReviewMode("human"); setAiState("idle");
-    setAiExplain(false); setEvidence([]); setEvidenceNote("");
+    setAiExplain(false); setEvidence(reviews[CANDIDATES[idx].id]?.evidence||[]); setEvidenceNote("");
     window.scrollTo({top:0});
   },[idx]);
   useEffect(()=>{
@@ -2424,7 +2425,8 @@ function Review({idx,setIdx,onBack,onSystem,onCalibrate,a11y,reviews,setReviews}
   const addEvidence=(text=evidenceNote)=>{
     const value=(text||"").trim(); if(!value) return;
     const entry=`${artifactLabel}: ${value}`;
-    setEvidence(items=>items.includes(entry)?items:[...items,entry]);
+    const next=evidence.includes(entry)?evidence:[...evidence,entry];
+    setEvidence(next); patch({evidence:next});
     setEvidenceNote(""); notice("Evidence attached to this review");
   };
   const runAI=()=>{
@@ -2439,8 +2441,9 @@ function Review({idx,setIdx,onBack,onSystem,onCalibrate,a11y,reviews,setReviews}
   return (
     <div className="app">
       <div className="topbar lg lg-refract" style={{borderRadius:0}}>
-        <button className="backbtn nav-home" onClick={onBack} aria-label="Return to queue" title="Queue"><I.grid/><span>Home</span></button>
         <LedgerBrand compact/>
+        <button className="nav-link" onClick={onBack}><I.grid/><span>Home</span></button>
+        <button className="nav-link" onClick={onCalibrate}><I.gavel/><span>Shortlist</span></button>
         <span className="spacer"/>
         <div className="pager">
           <button onClick={()=>go(-1)} disabled={idx===0} aria-label="Previous candidate" title="Previous candidate"><I.chevL/></button>
@@ -2448,8 +2451,7 @@ function Review({idx,setIdx,onBack,onSystem,onCalibrate,a11y,reviews,setReviews}
           <button onClick={()=>go(1)} disabled={idx===CANDIDATES.length-1} aria-label="Next candidate" title="Next candidate"><I.chevR/></button>
         </div>
         <div className="header-actions">
-          <button className="kbtn" onClick={onCalibrate}><I.gavel/><span className="system-label">Shortlist</span></button>
-          <button className="kbtn" onClick={onSystem}><I.tour/><span className="system-label">Design decisions</span></button>
+          <button className="kbtn design-link" onClick={onSystem} aria-label="Design decisions" title="Design decisions"><I.tour/></button>
           <ThemeToggle a11y={a11y}/>
           <ReviewerChip/>
         </div>
@@ -2493,7 +2495,7 @@ function Review({idx,setIdx,onBack,onSystem,onCalibrate,a11y,reviews,setReviews}
           </section>
         </div>
 
-        <div className="rail-grip" role="separator" aria-orientation="vertical" aria-label="Resize review panel" tabIndex="0" onPointerDown={resizeRail} onKeyDown={e=>{if(e.key==="ArrowLeft")setRailWidth(w=>Math.min(railMax,w+20));if(e.key==="ArrowRight")setRailWidth(w=>Math.max(360,w-20));}}/>
+        <div className="rail-grip" role="separator" aria-orientation="vertical" aria-label="Resize review panel" aria-valuemin="360" aria-valuemax={railMax} aria-valuenow={railWidth} tabIndex="0" onPointerDown={resizeRail} onKeyDown={e=>{if(e.key==="ArrowLeft")setRailWidth(w=>Math.min(railMax,w+20));if(e.key==="ArrowRight")setRailWidth(w=>Math.max(360,w-20));}}/>
         <aside className="rail review-rail">
           <div className="review-mode" role="group" aria-label="Review mode" data-tour="ai-mode">
             <button aria-pressed={reviewMode==="human"} onClick={()=>setReviewMode("human")}><I.star/>My review</button>
@@ -2551,7 +2553,7 @@ function Calibrate({reviews,onBack,onOpen,onSystem,a11y}){
   const compareCard=(r,label)=><article className="compare-card"><p className="eyebrow">{label}</p><div className="compare-person"><img src={r.c.av} alt=""/><div><h2>{r.c.name}</h2><p>{r.c.verdict.built}</p></div></div><dl><div><dt>Decision</dt><dd className={`cal-decision ${r.decision||"unset"}`}>{statusLabel(r.decision)}</dd></div><div><dt>Human score</dt><dd>{scoreLabel(r.score)}</dd></div><div><dt>Review status</dt><dd>{r.reviewed?"Complete":"Pending"}</dd></div></dl><div className="compare-evidence"><b>Materials</b><MaterialsMeter cand={r.c}/><p>{r.c.lede}</p></div><button className="cal-secondary" onClick={()=>onOpen(CANDIDATES.findIndex(c=>c.id===r.c.id))}>Open full review</button></article>;
   const copyRecord=async()=>{const text=rows.map(r=>`${r.c.name}: ${statusLabel(r.decision)}`).join("\n");try{await navigator.clipboard.writeText(text);setCopied(true);setTimeout(()=>setCopied(false),1800)}catch(e){setCopied(true)}};
   return <div className="cal-shell">
-    <nav className="cal-nav" aria-label="Decision room navigation"><LedgerBrand compact/><button className="nav-link" onClick={onBack}><I.grid/><span>Home</span></button><button className="nav-link active" aria-current="page"><I.gavel/><span>Shortlist</span></button><span className="spacer"/><div className="header-actions"><button className="kbtn" onClick={onSystem}><I.tour/><span className="system-label">Design decisions</span></button><ThemeToggle a11y={a11y}/><ReviewerChip/></div></nav>
+    <nav className="cal-nav" aria-label="Decision room navigation"><LedgerBrand compact/><button className="nav-link" onClick={onBack}><I.grid/><span>Home</span></button><button className="nav-link active" aria-current="page"><I.gavel/><span>Shortlist</span></button><span className="spacer"/><div className="header-actions"><button className="kbtn design-link" onClick={onSystem} aria-label="Design decisions" title="Design decisions"><I.tour/></button><ThemeToggle a11y={a11y}/><ReviewerChip/></div></nav>
     <main className="cal-main">
       {finalized && <section className="cal-summary" role="status"><h2>Finalists confirmed</h2><p>{advances} candidate{advances===1?"":"s"} move to next round. Decision record ready for hiring team.</p></section>}
       <header className="cal-head"><div><h1>Shortlist calibration</h1><p>Compare evidence before moving candidates forward.</p></div><div className="cal-kpis" aria-label="Decision progress"><div className="cal-kpi"><strong>{rows.length-remaining} / {rows.length}</strong><span>reviewed</span></div><div className="cal-kpi"><strong>{rows.filter(r=>r.conflict).length}</strong><span>open conflict</span></div><div className="cal-kpi"><strong>{advances}</strong><span>advancing</span></div></div></header>
@@ -2634,18 +2636,23 @@ function MaterialsMeter({cand}){
   return missing.length?<span className="materials-missing" aria-label={`Missing materials: ${missing.join(", ")}`}>Missing: {missing.join(", ")}</span>:null;
 }
 
-function QueueGuide({open,setOpen,onStart,onFlags}){
-  const message="Good afternoon, Rina. Five shortlisted submissions are waiting. Siddharth is first because every review material is present. Two candidates need a little recovery context before you compare them.";
+function QueueGuide({open,setOpen,onStart,onFlags,contextCount,mode}){
+  const message=mode==="ready"
+    ? `I’d start with Siddharth. Every review material is present, so you can judge the work without rebuilding context. ${contextCount} other submissions need recovery context before comparison.`
+    : mode==="context"
+      ? `Siddharth’s review is complete. Next, inspect Devin’s available prototype and source. Keep the missing walkthrough as a context gap, not a score.`
+      : `Every shortlisted review is complete. The shortlist is ready for side by side comparison and final calibration.`;
+  const primaryLabel=mode==="ready"?"Start with Siddharth":mode==="context"?"Continue with Devin":"Open shortlist";
   const [typed,setTyped]=useState(REDUCED?message:"");
   useEffect(()=>{
     if(!open){setTyped("");return;}
     if(REDUCED){setTyped(message);return;}
-    let n=0; const id=setInterval(()=>{n++;setTyped(message.slice(0,n));if(n>=message.length)clearInterval(id)},12);
+    let n=0; const id=setInterval(()=>{n++;setTyped(message.slice(0,n));if(n>=message.length)clearInterval(id)},7);
     return ()=>clearInterval(id);
-  },[open]);
+  },[open,message]);
   return <section className={"queue-guide "+(open?"open":"")} aria-label="Ledger guide">
     <button className="queue-guide-toggle" aria-expanded={open} onClick={()=>setOpen(v=>!v)}><span className="guide-orb"><I.spark/></span><span><b>Ledger guide</b><small>Today’s review plan</small></span><span className="spacer"/><span className="guide-state">{open?"Hide":"Show"}</span></button>
-    {open&&<div className="queue-guide-body"><p aria-live="polite"><span aria-hidden="true">{typed}<i className="guide-caret"/></span><span className="sr-only">{message}</span></p><div className="queue-guide-actions"><button className="guide-primary" onClick={onStart}>Start with Siddharth</button><button className="guide-secondary" onClick={onFlags}>Review 2 recovery flags</button></div><small className="guide-disclaimer">Guidance summarizes material availability and review state. Rina records every decision.</small></div>}
+    {open&&<div className="queue-guide-body"><p><span aria-hidden="true">{typed}<i className="guide-caret"/></span><span className="sr-only">{message}</span></p><div className="queue-guide-actions"><button className="guide-primary" onClick={onStart}>{primaryLabel}</button>{contextCount>0&&<button className="guide-secondary" onClick={onFlags}>View all {contextCount} recovery flags</button>}</div><small className="guide-disclaimer">Guidance summarizes material availability and review state. Rina records every decision.</small></div>}
   </section>;
 }
 
@@ -2658,6 +2665,8 @@ function Landing({onOpen,onCalibrate,onSystem,a11y,reviews}){
     ? "complete"
     : c.demoError||!c.demoOk||!c.loom.ok ? "context" : "ready";
   const counts=CANDIDATES.reduce((out,c)=>{out[stateFor(c)]++;return out;},{ready:0,context:0,complete:0});
+  const guideMode=counts.ready>0?"ready":counts.context>0?"context":"complete";
+  const nextContext=CANDIDATES.findIndex(c=>stateFor(c)==="context");
   const stateCopy={ready:"Ready to review",context:"Needs context",complete:"Completed"};
   const materialNote=(c)=>c.demoError
     ? "Preview failed. Source remains available"
@@ -2689,21 +2698,22 @@ function Landing({onOpen,onCalibrate,onSystem,a11y,reviews}){
         <button className="nav-link" onClick={onCalibrate}><I.gavel/><span>Shortlist</span></button>
         <span className="spacer"/>
         <div className="header-actions">
-          <button className="kbtn" onClick={onSystem}><I.tour/><span className="system-label">Design decisions</span></button>
+          <button className="kbtn design-link" onClick={onSystem} aria-label="Design decisions" title="Design decisions"><I.tour/></button>
           <ThemeToggle a11y={a11y}/>
           <ReviewerChip/>
         </div>
       </nav>
       <main className="queue-main">
         <header className="queue-heading">
-          <div><h1>Submission queue</h1><p>{CHALLENGE.pool}. Recommended order puts reviewable work first.</p><div className="queue-status-note">Completed reviews stay here for auditability. Use Completed to revisit a decision.</div></div>
+          <div><h1>Good afternoon, Rina.</h1><p>Your review day is ready. {counts.ready} submission{counts.ready===1?"":"s"} can move now; {counts.context} need context before calibration.</p></div>
           <div className="queue-stats" aria-label="Queue summary">
             <div className="queue-stat"><strong>{counts.ready}</strong><span>ready</span></div>
             <div className="queue-stat"><strong>{counts.context}</strong><span>need context</span></div>
             <div className="queue-stat"><strong>{counts.complete}</strong><span>completed</span></div>
           </div>
         </header>
-        <QueueGuide open={guideOpen} setOpen={setGuideOpen} onStart={()=>onOpen(0)} onFlags={()=>{setFilter("context");setQuery("");}}/>
+        <QueueGuide open={guideOpen} setOpen={setGuideOpen} mode={guideMode} contextCount={counts.context} onStart={()=>guideMode==="ready"?onOpen(0):guideMode==="context"?onOpen(nextContext):onCalibrate()} onFlags={()=>{setFilter("context");setQuery("");}}/>
+        <div className="queue-section-head"><h2>Submission queue</h2><p>{CHALLENGE.pool}. Completed reviews stay here for auditability.</p></div>
         <div className="queue-toolbar">
           <label className="queue-search">
             <span className="sr-only">Search submissions</span>
@@ -2777,7 +2787,7 @@ const STATES=[
 const ANATOMY=[
   {t:"--r-panel · --shadow",b:"Container",d:"One Card primitive with a header slot and a body slot. Live preview, README, screenshots, walkthrough and stack are all the same component with different children."},
   {t:"--surface-chrome",b:"Chrome",d:"Toolbar, command palette, tour card and toast share the glass material. It never sits behind body copy, only behind controls."},
-  {t:"12 col · 8 / 4",b:"Layout",d:"Twelve column grid capped at 1240px. Eight columns of reviewable evidence, four column sticky evaluation rail. Rail drops below the evidence under 1080px."},
+  {t:"12 col · 8 / 4",b:"Layout",d:"Twelve column grid capped at 1240px. Eight columns of reviewable evidence, four column evaluation rail. Rail drops below the evidence under 1200px."},
   {t:"--e-enter / --e-exit",b:"Motion",d:"Entrances ease out over 620ms and stagger by 60ms. Exits are faster and sharper. Distance travelled scales the duration, so a toast moves less than a sheet."},
   {t:"direction",b:"Motion carries meaning",d:"Paging forward slides content in from the right and back from the left, so J and K are distinguishable. A keyboard decision flashes the button it drove, because a shortcut fires with no cursor to follow. The completeness meter fills from zero on arrival, so four out of five feels different from five out of five."},
   {t:"tokens",b:"Theming",d:"Every value resolves through a semantic token. The dark theme in the toolbar is that claim made checkable: it overrides token values only and adds no component rule. Both themes were measured, and both pass."},
@@ -2788,9 +2798,8 @@ function SystemView(){
   return (
     <div className="sysview viewfade">
       <div className="sys-h">
-        <div className="eyebrow">Design system</div>
-        <h1>The system behind the screen</h1>
-        <p>Tokens are named for the job they do, not the colour they are, so the palette can change without touching a component. Everything below is what an engineer would need before writing the first line.</p>
+        <h1>Design decisions</h1>
+        <p>Why the recruiter journey works this way, plus the tokens and states needed to build it consistently.</p>
       </div>
       <div className="sysgrid">
         {TOKENS.map(grp=>(
@@ -2810,10 +2819,10 @@ function SystemView(){
         ))}
 
         <div className="syscard">
-          <div className="hd"><h3>Type ramp</h3><span className="n">Instrument Serif + Sans</span></div>
+          <div className="hd"><h3>Type ramp</h3><span className="n">Sans + mono metadata</span></div>
           <div className="bd">
             <div className="typerow">
-              <div className="r"><span className="spec">Display / 34px<br/>Instrument Serif</span><span style={{fontFamily:"var(--display)",fontSize:28,fontWeight:400,letterSpacing:"-.022em"}}>Siddharth Mehta</span></div>
+              <div className="r"><span className="spec">Display / 34px<br/>Sans 650</span><span style={{fontFamily:"var(--sans)",fontSize:28,fontWeight:650,letterSpacing:"-.03em"}}>Siddharth Mehta</span></div>
               <div className="r"><span className="spec">Section / 13px<br/>Sans 600</span><span style={{fontWeight:600,fontSize:13}}>Live preview</span></div>
               <div className="r"><span className="spec">Body / 15.5px<br/>Sans 400 · pretty</span><span style={{fontSize:14,color:"var(--text-secondary)"}}>An expressive AI workflow made visible through interaction.</span></div>
               <div className="r"><span className="spec">Meta / 11.5px<br/>Mono · tabular</span><span className="mono" style={{fontSize:11.5,color:"var(--text-tertiary)"}}>34 commits · 41 files</span></div>
@@ -2879,7 +2888,7 @@ function SystemView(){
               <div className="lyr"><span className="tk">keyboard</span><span className="tx"><b>The whole review without a mouse</b>J and K page submissions, arrows move between criteria, 0 to 4 scores the focused one and advances, A, H and P record a decision. Every element shows the same focus ring.</span></div>
               <div className="lyr"><span className="tk">reversible</span><span className="tx"><b>Undo on the consequential action</b>Recording a verdict on a person's work is the one action that most deserves a way back, so the confirmation carries an undo rather than only a message.</span></div>
               <div className="lyr"><span className="tk">forced-colors</span><span className="tx"><b>Windows high contrast</b>Glass and shadow drop out, borders resolve to CanvasText, and selected states use Highlight.</span></div>
-              <div className="lyr"><span className="tk">AA verified</span><span className="tx"><b>Every pair measured, not eyeballed</b>All eighteen text and control pairings clear WCAG AA. Metadata grey and the pass and caution pill colours were each darkened after the audit failed them. Container hairlines sit below 3:1 by choice, since 1.4.11 governs controls rather than decorative separators, and cards are already separated by fill and elevation. Form controls do carry a 3:1 border.</span></div>
+              <div className="lyr"><span className="tk">AA verified</span><span className="tx"><b>Every pair measured, not eyeballed</b>All forty audited text and control pairings clear WCAG AA. Metadata grey and the pass and caution pill colours were each darkened after the audit failed them. Container hairlines sit below 3:1 by choice, since 1.4.11 governs controls rather than decorative separators, and cards are already separated by fill and elevation. Form controls do carry a 3:1 border.</span></div>
             </div>
           </div>
         </div>
@@ -2927,7 +2936,7 @@ function Root(){
       {view==="home"   && <div className="viewfade" key="home"><Landing onOpen={open} onCalibrate={()=>go("calibrate")} onSystem={()=>go("system")} a11y={a11y} reviews={reviews}/></div>}
       {view==="review" && <div className="viewfade" key="review"><Review idx={idx} setIdx={setIdx} onBack={()=>go("home")} onSystem={()=>go("system")} onCalibrate={()=>go("calibrate")} a11y={a11y} reviews={reviews} setReviews={setReviews}/></div>}
       {view==="calibrate" && <div className="viewfade" key="calibrate"><Calibrate reviews={reviews} onBack={()=>go("home")} onOpen={open} onSystem={()=>go("system")} a11y={a11y}/></div>}
-      {view==="system" && <div key="system"><SystemChrome onBack={()=>go("home")} a11y={a11y}/><SystemView/></div>}
+      {view==="system" && <div key="system"><SystemChrome onBack={()=>go("home")} onCalibrate={()=>go("calibrate")} a11y={a11y}/><SystemView/></div>}
     </Fragment>
   );
 }
@@ -2952,14 +2961,18 @@ function TransparencyToggle({a11y}){
   );
 }
 
-function SystemChrome({onBack,a11y}){
+function SystemChrome({onBack,onCalibrate,a11y}){
   return (
     <div className="topbar lg lg-refract" style={{borderRadius:0}}>
-      <button className="backbtn" onClick={onBack} aria-label="Back to showcase" title="Back to showcase"><I.chevL/><span className="hidem">Showcase</span></button>
-      <LedgerBrand/>
-      <div className="ctx"><b>Design system</b><span className="sep">·</span><span>Handoff</span></div>
+      <LedgerBrand compact/>
+      <button className="nav-link" onClick={onBack}><I.grid/><span>Home</span></button>
+      <button className="nav-link" onClick={onCalibrate}><I.gavel/><span>Shortlist</span></button>
       <span className="spacer"/>
-      <ThemeToggle a11y={a11y}/>
+      <div className="header-actions">
+        <button className="kbtn design-link active" aria-current="page" aria-label="Design decisions" title="Design decisions"><I.tour/></button>
+        <ThemeToggle a11y={a11y}/>
+        <ReviewerChip/>
+      </div>
     </div>
   );
 }
