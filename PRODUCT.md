@@ -14,7 +14,7 @@ Move from a prioritized submission queue to a defensible shortlist without rebui
 
 ## Golden path
 
-Rina opens Home, follows the priority recommendation, inspects a candidate's actual work, records evidence, scores four anchored criteria, chooses a decision, completes the review, compares finalists, resolves disagreements, and confirms a shortlist.
+Rina opens Home, follows the priority recommendation, inspects a candidate's actual work, records evidence, scores four anchored criteria, chooses a decision, completes the review, compares scored finalists with their prototypes, sends two candidates to the next round, and returns to a newly created follow-up task.
 
 ## Product promise
 
@@ -26,7 +26,7 @@ Show the work before the score. Keep AI optional and recommendation-only. Keep t
 - Candidate artifacts, evidence, rubric, notes, and decision
 - Deterministic AI-assist simulation with explicit limitations
 - Fair missing-artifact and failed-preview recovery
-- Calibration overview, reviewer conflict, comparison, and decision record
+- Calibration overview, reviewer conflict, scored prototype comparison, decision record, and next-round handoff state
 - In-context design decisions and style guide
 
 Auth, live model calls, repository inspection, candidate messaging, and external applicant-tracking integrations are outside this static prototype.

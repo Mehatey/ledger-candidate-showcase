@@ -8,8 +8,9 @@ Live site: https://mehatey.github.io/ledger-candidate-showcase/
 
 1. **Home** opens with Rina's workload, a short Ledger guide, search, status filters, sorting, and a priority queue. Completed reviews remain visible for auditability.
 2. **Candidate review** puts the submitted work beside the review record. Prototype, source, walkthrough, README, and resume stay in one artifact stage. Evidence, score, notes, and decision persist across navigation and reloads.
-3. **Shortlist** shows review coverage, unresolved conflicts, recorded decisions, reviewer-specific signals, and a scalable two-candidate comparison before finalists can be confirmed.
-4. **Design decisions** explains key UX choices in context. **Style guide** documents the interface system.
+3. **Shortlist** shows review coverage, unresolved conflicts, recorded decisions, reviewer-specific signals, and a two-candidate comparison with actual prototype previews and criterion scores.
+4. **Handoff** packages two advancing candidates for the next round, then returns Rina home with a visible follow-up task. No external message is claimed or sent.
+5. **Design decisions** explains key UX choices in context. **Style guide** documents the interface system.
 
 Missing artifacts and failed previews use recovery paths. They are context gaps, not automatic negative judgments.
 

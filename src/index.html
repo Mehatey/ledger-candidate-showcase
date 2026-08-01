@@ -1356,6 +1356,18 @@ button:not(:disabled):active{scale:.96}
 ::view-transition-old(root){animation:vt-out 120ms ease-in both}::view-transition-new(root){animation:vt-in 220ms cubic-bezier(.2,0,0,1) both}
 @keyframes queue-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes panel-enter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}@keyframes score-select{from{opacity:.72;scale:.92}to{opacity:1;scale:1}}@keyframes tour-card-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}@keyframes mark-in{from{opacity:0;scale:.25;filter:blur(4px)}to{opacity:1;scale:1;filter:blur(0)}}@keyframes celebration-in{0%{opacity:0;transform:translate(-50%,8px)}18%,78%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-4px)}}@keyframes vt-out{to{opacity:0}}@keyframes vt-in{from{opacity:0}}
 @media(prefers-reduced-motion:reduce){button:not(:disabled),.nav-link::before,.queue-row,.artifact-panel>*,.cal-layout,.compare-view,.decision-record,.seg button.sel,.segind,.review-stage,.spotlight,.tourcard,.review-celebration,.celebration-mark{animation:none!important;transition:none!important}.queue-row,.artifact-panel>*,.cal-layout,.compare-view,.decision-record,.tourcard{opacity:1!important;transform:none!important}::view-transition-old(root),::view-transition-new(root){animation:none!important}}
+
+/* Final recruiter journey: active surfaces follow the documented 4pt spacing scale. */
+.queue-main,.cal-main{padding:40px 36px 64px}.review-stage{padding:16px 24px 28px}.compare-card{padding:24px}.compare-picker{margin-bottom:24px}.human-review .railcard .bd{padding:16px}.human-review .rubric{gap:12px}.human-review .rollup{padding:16px}.human-review .crit:last-child{padding-bottom:12px}.queue-sort{appearance:none;padding:0 40px 0 12px;width:100%}.select-shell{display:block;position:relative}.select-caret{align-items:center;color:var(--ink-3);display:flex;height:40px;justify-content:center;pointer-events:none;position:absolute;right:12px;top:0;width:16px}.select-caret svg{transition:transform 160ms cubic-bezier(.16,1,.3,1)}.select-shell:focus-within .select-caret{color:var(--ink)}.select-shell:focus-within .select-caret svg{transform:translateY(2px)}
+.compare-guide{align-items:center;background:var(--panel-2);border:1px solid var(--acid-line);border-radius:12px;display:flex;gap:12px;margin:0 0 16px;min-height:48px;padding:8px 12px;width:100%}.compare-guide .guide-orb{height:28px;width:28px}.compare-guide-copy{align-items:center;display:flex;gap:12px;min-width:0}.compare-guide-copy b{font-size:12px;white-space:nowrap}.compare-guide-copy p{color:var(--ink-2);font-size:12px;line-height:1.4;margin:0;max-width:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.compare-guide-close{align-items:center;border-radius:8px;color:var(--ink-3);display:flex;height:32px;justify-content:center;margin-left:auto;width:32px}.compare-guide-close:hover{background:var(--panel);color:var(--ink);transform:rotate(4deg)}
+.compare-preview{background:#080a0f;border-radius:12px;display:block;height:176px;margin:0 0 20px;overflow:hidden;position:relative;width:100%}.compare-preview img{height:100%;object-fit:contain;transition:transform 240ms cubic-bezier(.16,1,.3,1);width:100%}.compare-preview:hover img{transform:scale(1.025)}.compare-preview span{align-items:center;background:rgba(8,10,15,.82);border-radius:8px;bottom:8px;color:#fff;display:flex;font-size:11px;gap:6px;left:8px;padding:6px 8px;position:absolute}.compare-card dl{border-bottom:1px solid var(--hairline);display:grid;gap:0;grid-template-columns:repeat(3,1fr);margin:0 0 20px;padding-bottom:20px}.compare-card dl>div{border:0;border-radius:0;padding:0 12px}.compare-card dl>div:first-child{padding-left:0}.compare-card dl>div+div{border-left:1px solid var(--hairline)}.compare-breakdown{padding-bottom:24px}.compare-breakdown>div{min-height:36px}.compare-evidence{border-top:1px solid var(--hairline);padding-top:24px!important}.compare-card .cal-secondary{align-items:center;display:flex;gap:8px;justify-content:center}.compare-card .cal-secondary svg{transition:transform 160ms cubic-bezier(.16,1,.3,1)}.compare-card .cal-secondary:hover svg{transform:translateX(3px)}
+.boot-screen{align-items:center;background:var(--canvas);display:flex;inset:0;justify-content:center;position:fixed;z-index:var(--z-modal,90)}.boot-lockup{align-items:center;display:flex;flex-direction:column;gap:16px;text-align:center}.boot-logo{color:var(--acid);filter:drop-shadow(0 0 12px color-mix(in srgb,var(--acid) 24%,transparent));transform-origin:center;animation:boot-logo 640ms cubic-bezier(.16,1,.3,1) both}.boot-logo svg{height:44px;width:44px}.boot-tagline{color:var(--ink);font-size:16px;font-weight:650;letter-spacing:-.02em;animation:boot-copy 480ms 160ms cubic-bezier(.16,1,.3,1) both}.boot-tagline span{color:var(--ink-2);font-weight:500}.boot-rule{background:var(--hairline);height:1px;overflow:hidden;width:176px}.boot-rule i{background:var(--acid);display:block;height:100%;transform-origin:left;animation:boot-rule 720ms 120ms cubic-bezier(.16,1,.3,1) both;width:100%}@keyframes boot-logo{from{filter:blur(8px);opacity:0;transform:scale(.82)}to{filter:blur(0);opacity:1;transform:scale(1)}}@keyframes boot-copy{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes boot-rule{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.home-notice{align-items:center;background:var(--go-bg);border:1px solid color-mix(in srgb,var(--go) 38%,transparent);border-radius:12px;display:flex;gap:12px;margin:24px 0 0;min-height:56px;padding:8px 12px;animation:notice-in 280ms cubic-bezier(.16,1,.3,1) both}.home-notice>.notice-icon{align-items:center;background:var(--go);border-radius:50%;color:#fff;display:flex;height:32px;justify-content:center;width:32px}.home-notice-copy{min-width:0}.home-notice-copy b{display:block;font-size:12px}.home-notice-copy span{color:var(--ink-2);display:block;font-size:11.5px;margin-top:2px}.home-notice-actions{display:flex;gap:8px;margin-left:auto}.home-notice button{align-items:center;border-radius:8px;color:var(--ink-2);display:flex;font-size:11.5px;gap:6px;min-height:32px;padding:0 8px}.home-notice button:hover{background:var(--panel);color:var(--ink)}@keyframes notice-in{from{clip-path:inset(0 100% 0 0);opacity:0}to{clip-path:inset(0);opacity:1}}
+.handoff-screen{margin:48px auto 80px;max-width:920px}.handoff-hero{align-items:center;display:flex;flex-direction:column;text-align:center}.handoff-mark{align-items:center;background:var(--go);border-radius:50%;color:#fff;display:flex;height:56px;justify-content:center;width:56px;animation:handoff-mark 360ms cubic-bezier(.16,1,.3,1) both}.handoff-mark svg{height:24px;width:24px}.handoff-hero h1{font-family:var(--sans);font-size:36px;letter-spacing:-.04em;margin-top:20px}.handoff-hero p{color:var(--ink-2);font-size:14px;line-height:1.55;margin-top:8px;max-width:56ch}.handoff-list{border-bottom:1px solid var(--hairline);border-top:1px solid var(--hairline);display:grid;grid-template-columns:1fr 1fr;margin-top:40px}.handoff-person{align-items:center;display:grid;gap:12px;grid-template-columns:56px minmax(0,1fr) auto;padding:20px 24px}.handoff-person+.handoff-person{border-left:1px solid var(--hairline)}.handoff-person img{border-radius:12px;height:56px;width:56px}.handoff-person strong{display:block;font-size:15px}.handoff-person span{color:var(--ink-2);display:block;font-size:12px;margin-top:4px}.handoff-score{font-family:var(--mono)!important;font-size:12px!important}.handoff-route{align-items:center;background:var(--panel);border-radius:12px;display:flex;gap:12px;margin:24px 0 0;padding:16px}.handoff-route>span{align-items:center;background:var(--acid-dim);border-radius:8px;color:var(--acid);display:flex;height:36px;justify-content:center;width:36px}.handoff-route b{display:block;font-size:13px}.handoff-route p{color:var(--ink-2);font-size:12px;margin-top:4px}.handoff-actions{display:flex;gap:8px;justify-content:center;margin-top:24px}.handoff-actions button{align-items:center;border-radius:8px;display:flex;font-size:12px;font-weight:650;gap:8px;min-height:40px;padding:0 16px}.handoff-actions .primary{background:var(--acid);color:var(--canvas)}.handoff-actions .secondary{border:1px solid var(--hairline-strong);color:var(--ink-2)}.handoff-disclaimer{color:var(--ink-3);display:block;font-size:10.5px;margin-top:16px;text-align:center}@keyframes handoff-mark{from{filter:blur(6px);opacity:0;transform:scale(.7)}to{filter:blur(0);opacity:1;transform:scale(1)}}
+button:not(:disabled),.nav-link,.queue-row,.compare-preview{transition:background-color 160ms cubic-bezier(.16,1,.3,1),border-color 160ms cubic-bezier(.16,1,.3,1),color 160ms cubic-bezier(.16,1,.3,1),transform 160ms cubic-bezier(.16,1,.3,1)}.nav-icon-button:hover svg,.theme-toggle:hover svg{transform:rotate(5deg) scale(1.06)}.nav-icon-button svg,.theme-toggle svg{transition:transform 180ms cubic-bezier(.16,1,.3,1)}
+@media(max-width:1200px){.queue-main,.cal-main{padding:32px 24px 48px}.review-stage{padding:16px 24px 24px}.compare-preview{height:152px}.handoff-screen{margin:32px auto 64px}}
+@media(prefers-reduced-motion:reduce){.boot-logo,.boot-tagline,.boot-rule i,.home-notice,.handoff-mark{animation:none!important}.compare-preview img,.nav-icon-button svg,.theme-toggle svg,.select-caret svg{transition:none!important}}
+:root{--z-dropdown:20;--z-sticky:40;--z-modal-backdrop:80;--z-modal:90;--z-toast:96;--z-tooltip:100}.queue-guide{margin-top:24px}.queue-section-head{gap:16px;margin-top:32px}.queue-section-head+.queue-toolbar{margin-top:16px}.queue-list{margin-top:16px}.queue-row{min-height:96px}.compare-card .compare-person{margin:12px 0 20px}.compare-card dd{margin-top:8px}.artifact-panel{min-height:480px}.prototype-media img,.prototype-media video{background:#080a0f;object-fit:contain}.handoff-primary{background:var(--acid)!important;color:var(--canvas)!important}.handoff-primary:hover{filter:brightness(1.06);transform:translateY(-1px)}
 </style>
 </head>
 <body>
@@ -1382,6 +1394,7 @@ const STILL_BG = (() => {
 const I = {
   chevL:(p)=><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M15 18l-6-6 6-6"/></svg>,
   chevR:(p)=><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M9 18l6-6-6-6"/></svg>,
+  chevD:(p)=><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...p}><path d="M6 9l6 6 6-6"/></svg>,
   x:(p)=><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" {...p}><path d="M6 6l12 12M18 6L6 18"/></svg>,
   github:(p)=><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" {...p}><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.34 1.12 2.91.85.09-.66.35-1.12.63-1.37-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.4 9.4 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.02 10.02 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>,
   play:(p)=><svg width="20" height="20" viewBox="0 0 24 24" fill="#0A0B0D" {...p}><path d="M8 5v14l11-7z"/></svg>,
@@ -2340,7 +2353,7 @@ function ReviewerChip(){
   </div>;
 }
 
-function AppNav({active,onHome,onCalibrate,onTour,onSystem}){
+function AppNav({active,onHome,onCalibrate,onTour,onSystem,a11y}){
   return <nav className="app-nav" aria-label="Primary">
     <button className={`nav-link ${active==="home"?"active":""}`} aria-current={active==="home"?"page":undefined} onClick={onHome}><I.grid/><span>Home</span></button>
     <button className={`nav-link ${active==="calibrate"?"active":""}`} aria-current={active==="calibrate"?"page":undefined} onClick={onCalibrate}><I.gavel/><span>Shortlist</span></button>
@@ -2348,6 +2361,7 @@ function AppNav({active,onHome,onCalibrate,onTour,onSystem}){
     <div className="header-actions">
       <button className="kbtn design-link nav-icon-button" data-label="Design decisions" onClick={onTour} aria-label="Show design decisions" title="Design decisions"><I.tour/></button>
       <button className={`kbtn design-link nav-icon-button ${active==="system"?"active":""}`} data-label="Style guide" onClick={onSystem} aria-current={active==="system"?"page":undefined} aria-label="Open style guide" title="Style guide"><I.layers/></button>
+      <ThemeToggle a11y={a11y}/>
       <ReviewerChip/>
     </div>
   </nav>;
@@ -2361,7 +2375,8 @@ function TypedGreeting(){
     let n=0; const id=setInterval(()=>{n+=1;setText(message.slice(0,n));if(n>=message.length)clearInterval(id)},42);
     return ()=>clearInterval(id);
   },[]);
-  return <h1><span aria-hidden="true">{text}<i className="greeting-caret"/></span><span className="sr-only">{message}</span></h1>;
+  const typing=text.length<message.length;
+  return <h1><span aria-hidden="true">{text}{typing&&<i className="greeting-caret"/>}</span><span className="sr-only">{message}</span></h1>;
 }
 
 function ResumeView({cand}){
@@ -2533,7 +2548,7 @@ function Review({idx,setIdx,onBack,onSystem,onTour,onCalibrate,a11y,reviews,setR
 
   return (
     <div className="app">
-      <AppNav active="review" onHome={onBack} onCalibrate={onCalibrate} onTour={onTour} onSystem={onSystem}/>
+      <AppNav active="review" onHome={onBack} onCalibrate={onCalibrate} onTour={onTour} onSystem={onSystem} a11y={a11y}/>
 
       <div className="mobile-review-dock" aria-label="Review controls">
         <button onClick={()=>scrollReview("rubric")}><I.star/>Scorecard <span className="dockmeta">{scoreCount}/{RUBRIC.length}</span></button>
@@ -2605,13 +2620,23 @@ function Review({idx,setIdx,onBack,onSystem,onTour,onCalibrate,a11y,reviews,setR
   );
 }
 
+function FinalHandoff({finalists,onHome,onCopy,copied}){
+  return <section className="handoff-screen" role="status" aria-live="polite">
+    <div className="handoff-hero" data-tour="handoff-summary"><span className="handoff-mark"><I.check/></span><h1>Next-round handoff ready</h1><p>Two finalists are packaged for the design panel. The remaining submissions stay in Rina’s current review round.</p></div>
+    <div className="handoff-list">{finalists.map(r=><div className="handoff-person" key={r.c.id}><img src={r.c.av} alt=""/><div><strong>{r.c.name}</strong><span>{r.c.verdict.built}</span></div><span className="handoff-score">{r.score} / 16</span></div>)}</div>
+    <div className="handoff-route" data-tour="handoff-route"><span><I.gavel/></span><div><b>Next round: design panel</b><p>Evidence, human scores, notes, and decisions are included in the handoff record.</p></div></div>
+    <div className="handoff-actions" data-tour="handoff-actions"><button className="primary handoff-primary" onClick={onHome}>Return to review day<I.chevR/></button><button className="secondary" onClick={onCopy}>{copied?"Record copied":"Copy handoff record"}</button></div>
+    <small className="handoff-disclaimer">Prototype state only. No external message was sent.</small>
+  </section>;
+}
+
 function Calibrate({reviews,onBack,onOpen,onSystem,onTour,a11y,ui,setUi}){
   const selected=ui.calSelected||"c-sid";
   const setSelected=value=>setUi(s=>({...s,calSelected:value}));
   const resolved=!!ui.calResolved;
   const setResolved=value=>setUi(s=>({...s,calResolved:value}));
   const finalized=!!ui.calFinalized;
-  const setFinalized=value=>setUi(s=>({...s,calFinalized:value}));
+  const setFinalized=value=>setUi(s=>({...s,calFinalized:value,handoffNotice:value||s.handoffNotice}));
   const [copied,setCopied]=useState(false);
   const mode=ui.calMode||"overview";
   const setMode=value=>setUi(s=>({...s,calMode:value}));
@@ -2652,21 +2677,23 @@ function Calibrate({reviews,onBack,onOpen,onSystem,onTour,a11y,ui,setUi}){
     {role:"Engineering reviewer",value:r.reviewed?"Reviewed":"Pending",tone:r.reviewed?"g":"p"},
   ];
   const comparedA=rows.find(r=>r.c.id===compareA),comparedB=rows.find(r=>r.c.id===compareB);
+  const finalists=rows.filter(r=>r.decision==="go").slice(0,2);
   const compareRead=comparedA.score==null||comparedB.score==null
-    ? `${comparedA.score==null?comparedA.c.name:comparedB.c.name} still needs a human score. Keep the comparison open, then decide from evidence rather than a blended total.`
-    : `${comparedA.c.name} and ${comparedB.c.name} are both scored. Reopen their evidence before treating the score gap as a decision.`;
-  const compareCard=(r,label)=>{const detail=reviews[r.c.id]?.scores||{};return <article className="compare-card"><p className="eyebrow">{label}</p><div className="compare-person"><img src={r.c.av} alt=""/><div><h2>{r.c.name}</h2><p>{r.c.verdict.built}</p></div></div><dl><div><dt>Decision</dt><dd className={`cal-decision ${r.decision||"unset"}`}>{statusLabel(r.decision)}</dd></div><div><dt>Human score</dt><dd>{scoreLabel(r.score)}</dd></div><div><dt>Review status</dt><dd>{r.reviewed?"Complete":"Pending"}</dd></div></dl><div className="compare-breakdown"><h3>Score by criterion</h3>{RUBRIC.map(item=>{const n=detail[item.key];return <div key={item.key}><span>{item.label}</span><i><b style={{width:n==null?"0%":`${n/4*100}%`}}/></i><strong>{n==null?"Not scored":`${n}/4`}</strong></div>})}</div>{!r.reviewed&&<div className="compare-gap">Review incomplete. Compare the work, but do not treat missing scores as zero.</div>}<div className="compare-evidence"><b>Evidence context</b><MaterialsMeter cand={r.c}/><p>{r.c.prior?.note||r.c.lede}</p></div><button className="cal-secondary" onClick={()=>onOpen(CANDIDATES.findIndex(c=>c.id===r.c.id))}>Open full review</button></article>};
+    ? "One review is incomplete. Compare the work without treating missing scores as zero."
+    : "Both finalists are scored. Compare the evidence behind the score gap.";
+  const compareCard=(r,label)=>{const detail=reviews[r.c.id]?.scores||{};return <article className="compare-card"><p className="eyebrow">{label}</p><div className="compare-person"><img src={r.c.av} alt=""/><div><h2>{r.c.name}</h2><p>{r.c.verdict.built}</p></div></div><button className="compare-preview" onClick={()=>onOpen(CANDIDATES.findIndex(c=>c.id===r.c.id))} aria-label={`Open ${r.c.name} prototype review`}><img src={r.c.preview} alt={r.c.previewAlt||`${r.c.name} prototype preview`}/><span><I.eye/>Prototype preview</span></button><dl><div><dt>Decision</dt><dd className={`cal-decision ${r.decision||"unset"}`}>{statusLabel(r.decision)}</dd></div><div><dt>Human score</dt><dd>{scoreLabel(r.score)}</dd></div><div><dt>Review status</dt><dd>{r.reviewed?"Complete":"Pending"}</dd></div></dl><div className="compare-breakdown"><h3>Score by criterion</h3>{RUBRIC.map(item=>{const n=detail[item.key];return <div key={item.key}><span>{item.label}</span><i><b style={{width:n==null?"0%":`${n/4*100}%`}}/></i><strong>{n==null?"Not scored":`${n}/4`}</strong></div>})}</div>{!r.reviewed&&<div className="compare-gap">Review incomplete. Compare the work, but do not treat missing scores as zero.</div>}<div className="compare-evidence"><b>Evidence context</b><MaterialsMeter cand={r.c}/><p>{r.c.prior?.note||r.c.lede}</p></div><button className="cal-secondary" onClick={()=>onOpen(CANDIDATES.findIndex(c=>c.id===r.c.id))}>Open full review<I.chevR/></button></article>};
   const copyRecord=async()=>{const text=rows.map(r=>`${r.c.name}: ${statusLabel(r.decision)}`).join("\n");try{await navigator.clipboard.writeText(text);setCopied(true);setTimeout(()=>setCopied(false),1800)}catch(e){setCopied(true)}};
+  if(finalized) return <div className="cal-shell"><AppNav active="calibrate" onHome={onBack} onCalibrate={()=>{}} onTour={onTour} onSystem={onSystem} a11y={a11y}/><main className="cal-main"><FinalHandoff finalists={finalists} onHome={onBack} onCopy={copyRecord} copied={copied}/></main></div>;
   return <div className="cal-shell">
-    <AppNav active="calibrate" onHome={onBack} onCalibrate={()=>{}} onTour={onTour} onSystem={onSystem}/>
+    <AppNav active="calibrate" onHome={onBack} onCalibrate={()=>{}} onTour={onTour} onSystem={onSystem} a11y={a11y}/>
     <main className="cal-main">
       {finalized && <section className="cal-summary" role="status"><h2>Finalists confirmed</h2><p>{advances} candidate{advances===1?"":"s"} move to next round. Decision record ready for hiring team.</p></section>}
       <header className="cal-head" data-tour="cal-summary"><div><h1>Shortlist calibration</h1><p>Compare evidence before moving candidates forward.</p></div><div className="cal-kpis" aria-label="Decision progress"><div className="cal-kpi"><strong>{rows.length-remaining} / {rows.length}</strong><span>reviewed</span></div><div className="cal-kpi"><strong>{rows.filter(r=>r.conflict).length}</strong><span>open conflict</span></div><div className="cal-kpi"><strong>{advances}</strong><span>advancing</span></div></div></header>
       {rows.some(r=>r.conflict) && <div className="cal-alert" data-tour="cal-conflict" role="alert"><I.alert/><strong>Reviewer disagreement</strong><p>Arun Patel has conflicting implementation-quality signals. Resolve before final confirmation.</p><button className="kbtn" onClick={()=>setSelected("c-arun")}>Review conflict</button></div>}
       <div className="cal-tabs" data-tour="cal-tabs" role="tablist" aria-label="Shortlist views">{[["overview","Overview"],["compare","Compare side by side"],["record","Decision record"]].map(([id,label])=><button key={id} role="tab" aria-selected={mode===id} className={mode===id?"active":""} onClick={()=>setMode(id)}>{label}</button>)}</div>
       {mode==="overview"&&<div className="cal-layout"><section className="cal-list" aria-label="Candidate decisions"><div className="cal-list-hd"><span>Candidate</span><span>Decision</span><span>Reviews</span><span>Score</span><span>Reviewer signals</span><span/></div>{rows.map(r=>{const signals=signalFor(r);return <button key={r.c.id} className={`cal-row ${selected===r.c.id?"sel":""}`} onClick={()=>setSelected(r.c.id)} aria-pressed={selected===r.c.id}><span className="cal-person"><img src={r.c.av} alt=""/><span><strong>{r.c.name}</strong><span>{r.c.verdict.built}</span></span></span><span className={`cal-decision ${r.decision||"unset"}`}>{r.conflict?"Conflict":statusLabel(r.decision)}</span><span className="cal-review">{r.reviewed?"Complete":"Pending"}</span><span className="cal-score">{r.score!=null&&<i><b style={{width:`${Math.max(8,r.score/16*100)}%`}}/></i>}<span>{scoreLabel(r.score)}</span></span><span className="cal-signal" aria-label={signals.map(s=>`${s.role}: ${s.value}`).join(". ")}>{signals.map(s=><span key={s.role} className={`signal-dot ${s.tone}`} title={`${s.role}: ${s.value}`}><i/></span>)}</span><span className="cal-chevron"><I.chevR/></span></button>})}</section>
-      <aside className="cal-rail"><div className="cal-readiness" aria-label={`${readyCount} of 4 decision checks complete`}><div><span>Decision checklist</span><strong>{readyCount}/4 ready</strong></div><i><b style={{width:`${readinessPct}%`}}/></i><ul className="readiness-list">{readinessItems.map(item=><li key={item.label} className={item.done?"done":""}><span className="readiness-check">{item.done&&<I.check/>}</span><span>{item.label}</span><b>{item.detail}</b></li>)}</ul></div><div className="cal-rail-head"><span>Selected candidate</span><h2>Decision context</h2></div><div className="cal-rail-body"><div className="cal-selected"><img src={current.c.av} alt=""/><div><strong>{current.c.name}</strong><span>{statusLabel(current.decision)} · {scoreLabel(current.score)}</span></div></div><div className="cal-note">{current.c.prior?.note || current.c.lede}</div>{current.conflict && <div className="cal-conflict"><strong>Conflict needs a human call</strong><p>The design reviewer scored implementation quality lower. The engineering reviewer marked the limitation intentional. Review the evidence, then record the resolution.</p><button onClick={()=>setResolved(true)}>Resolve as hold for evidence</button></div>}<button className="cal-secondary" onClick={()=>onOpen(CANDIDATES.findIndex(c=>c.id===current.c.id))}>Open full review</button><button className="cal-secondary" onClick={()=>{choose("a",current.c.id);setMode("compare")}}>Compare this candidate</button></div><div className="cal-actions"><button className="cal-primary" disabled={blockers.length>0||finalized} onClick={()=>setFinalized(true)}>{finalized?"Finalists confirmed":`Confirm ${advances} finalist${advances===1?"":"s"}`}</button><p>{blockers.length?`Blocked: ${blockers.join(" · ")}`:"All reviews complete. Ready to notify candidates."}</p>{finalized&&<button className="cal-secondary" onClick={copyRecord}>{copied?"Decision record copied":"Copy decision record"}</button>}</div></aside></div>}
-      {mode==="compare"&&<section className="compare-view" data-tour="cal-compare" aria-label="Side-by-side comparison"><div className="compare-picker"><label><span>Candidate A</span><select aria-label="Candidate A" value={compareA} onChange={e=>choose("a",e.target.value)}>{rows.map(r=><option key={r.c.id} value={r.c.id}>{r.c.name} · {statusLabel(r.decision)} · {scoreLabel(r.score)}</option>)}</select></label><button className="compare-swap" onClick={swapCompare} aria-label="Swap comparison candidates"><I.refresh/>Swap</button><label><span>Candidate B</span><select aria-label="Candidate B" value={compareB} onChange={e=>choose("b",e.target.value)}>{rows.map(r=><option key={r.c.id} value={r.c.id}>{r.c.name} · {statusLabel(r.decision)} · {scoreLabel(r.score)}</option>)}</select></label></div><div className="compare-guide"><span className="guide-orb"><I.spark/></span><div><b>Ledger guide</b><p>{compareRead}</p></div></div><div className="compare-grid">{compareCard(comparedA,"Candidate A")}{compareCard(comparedB,"Candidate B")}</div></section>}
+      <aside className="cal-rail"><div className="cal-readiness" aria-label={`${readyCount} of 4 decision checks complete`}><div><span>Decision checklist</span><strong>{readyCount}/4 ready</strong></div><i><b style={{width:`${readinessPct}%`}}/></i><ul className="readiness-list">{readinessItems.map(item=><li key={item.label} className={item.done?"done":""}><span className="readiness-check">{item.done&&<I.check/>}</span><span>{item.label}</span><b>{item.detail}</b></li>)}</ul></div><div className="cal-rail-head"><span>Selected candidate</span><h2>Decision context</h2></div><div className="cal-rail-body"><div className="cal-selected"><img src={current.c.av} alt=""/><div><strong>{current.c.name}</strong><span>{statusLabel(current.decision)} · {scoreLabel(current.score)}</span></div></div><div className="cal-note">{current.c.prior?.note || current.c.lede}</div>{current.conflict && <div className="cal-conflict"><strong>Conflict needs a human call</strong><p>The design reviewer scored implementation quality lower. The engineering reviewer marked the limitation intentional. Review the evidence, then record the resolution.</p><button onClick={()=>setResolved(true)}>Resolve as hold for evidence</button></div>}<button className="cal-secondary" onClick={()=>onOpen(CANDIDATES.findIndex(c=>c.id===current.c.id))}>Open full review</button><button className="cal-secondary" onClick={()=>{choose("a",current.c.id);setMode("compare")}}>Compare this candidate</button></div><div className="cal-actions"><button className="cal-primary" disabled={advances<2} onClick={()=>setFinalized(true)}>Send {Math.min(advances,2)} finalists to next round</button><p>{advances<2?"Choose two candidates to advance.":`${remaining} submissions remain in this round.`}</p></div></aside></div>}
+      {mode==="compare"&&<section className="compare-view" data-tour="cal-compare" aria-label="Side-by-side comparison"><div className="compare-picker"><label><span>Candidate A</span><select aria-label="Candidate A" value={compareA} onChange={e=>choose("a",e.target.value)}>{rows.map(r=><option key={r.c.id} value={r.c.id}>{r.c.name} · {statusLabel(r.decision)} · {scoreLabel(r.score)}</option>)}</select></label><button className="compare-swap" onClick={swapCompare} aria-label="Swap comparison candidates"><I.refresh/>Swap</button><label><span>Candidate B</span><select aria-label="Candidate B" value={compareB} onChange={e=>choose("b",e.target.value)}>{rows.map(r=><option key={r.c.id} value={r.c.id}>{r.c.name} · {statusLabel(r.decision)} · {scoreLabel(r.score)}</option>)}</select></label></div>{!ui.compareGuideHidden&&<div className="compare-guide"><span className="guide-orb"><I.spark/></span><div className="compare-guide-copy"><b>Ledger guide</b><p>{compareRead}</p></div><button className="compare-guide-close" onClick={()=>setUi(s=>({...s,compareGuideHidden:true}))} aria-label="Dismiss Ledger guide"><I.x/></button></div>}<div className="compare-grid">{compareCard(comparedA,"Candidate A")}{compareCard(comparedB,"Candidate B")}</div></section>}
       {mode==="record"&&<section className="decision-record" data-tour="cal-record"><h2>Decision record</h2><p>Review coverage, resolved conflicts, and Rina’s recorded decisions. No ranking or automated recommendation.</p><div className="decision-list">{rows.map(r=><div key={r.c.id}><b>{r.c.name}</b><span>{r.reviewed?"Review complete":"Review pending"}</span><span className={`cal-decision ${r.decision||"unset"}`}>{statusLabel(r.decision)}</span></div>)}</div><button className="cal-secondary" onClick={copyRecord}>{copied?"Decision record copied":"Copy decision record"}</button></section>}
     </main></div>;
 }
@@ -2757,11 +2784,11 @@ function QueueGuide({open,setOpen,onStart,onFlags,contextCount,mode}){
   },[open,message]);
   return <section className={"queue-guide "+(open?"open":"")} aria-label="Ledger guide">
     <button className="queue-guide-toggle" aria-expanded={open} onClick={()=>setOpen(v=>!v)}><span className="guide-orb"><I.spark/></span><span><b>Ledger guide</b><small>Today’s review plan</small></span><span className="spacer"/><span className="guide-state">{open?"Hide":"Show"}</span></button>
-    {open&&<div className="queue-guide-body"><p><span aria-hidden="true">{typed}<i className="guide-caret"/></span><span className="sr-only">{message}</span></p><div className="queue-guide-actions"><button className="guide-primary" onClick={onStart}>{primaryLabel}</button>{contextCount>0&&<button className="guide-secondary" onClick={onFlags}>View all {contextCount} recovery flags</button>}</div><small className="guide-disclaimer">Guidance summarizes material availability and review state. Rina records every decision.</small></div>}
+    {open&&<div className="queue-guide-body"><p><span aria-hidden="true">{typed}{typed.length<message.length&&<i className="guide-caret"/>}</span><span className="sr-only">{message}</span></p><div className="queue-guide-actions"><button className="guide-primary" onClick={onStart}>{primaryLabel}</button>{contextCount>0&&<button className="guide-secondary" onClick={onFlags}>View all {contextCount} recovery flags</button>}</div><small className="guide-disclaimer">Guidance summarizes material availability and review state. Rina records every decision.</small></div>}
   </section>;
 }
 
-function Landing({onOpen,onCalibrate,onSystem,onTour,a11y,reviews}){
+function Landing({onOpen,onCalibrate,onSystem,onTour,a11y,reviews,ui,setUi}){
   const [filter,setFilter]=useState("all");
   const [query,setQuery]=useState("");
   const [sort,setSort]=useState("recommended");
@@ -2797,7 +2824,7 @@ function Landing({onOpen,onCalibrate,onSystem,onTour,a11y,reviews}){
   ];
   return (
     <div className="queue-shell">
-      <AppNav active="home" onHome={()=>{}} onCalibrate={onCalibrate} onTour={onTour} onSystem={onSystem}/>
+      <AppNav active="home" onHome={()=>{}} onCalibrate={onCalibrate} onTour={onTour} onSystem={onSystem} a11y={a11y}/>
       <main className="queue-main">
         <header className="queue-heading" data-tour="home-summary">
           <div><TypedGreeting/><p>Your review day is ready. {counts.ready} submission{counts.ready===1?"":"s"} can move now; {counts.context} need context before calibration.</p></div>
@@ -2807,6 +2834,7 @@ function Landing({onOpen,onCalibrate,onSystem,onTour,a11y,reviews}){
             <div className="queue-stat"><strong>{counts.complete}</strong><span>completed</span></div>
           </div>
         </header>
+        {ui.handoffNotice&&<section className="home-notice" role="status"><span className="notice-icon"><I.check/></span><div className="home-notice-copy"><b>New next-round task added</b><span>Prepare design-panel interviews for Siddharth Mehta and Jae Lin.</span></div><div className="home-notice-actions"><button onClick={onCalibrate}>View handoff<I.chevR/></button><button onClick={()=>setUi(s=>({...s,handoffNotice:false}))} aria-label="Dismiss new task"><I.x/></button></div></section>}
         <div data-tour="home-guide"><QueueGuide open={guideOpen} setOpen={setGuideOpen} mode={guideMode} contextCount={counts.context} onStart={()=>guideMode==="ready"?onOpen(0):guideMode==="context"?onOpen(nextContext):onCalibrate()} onFlags={()=>{setFilter("context");setQuery("");}}/></div>
         <div className="queue-section-head"><h2>Submission queue</h2><p>{CHALLENGE.pool}. Completed reviews stay here for auditability.</p></div>
         <div className="queue-toolbar" data-tour="home-controls">
@@ -2817,11 +2845,11 @@ function Landing({onOpen,onCalibrate,onSystem,onTour,a11y,reviews}){
           <div className="queue-filters" role="group" aria-label="Filter submissions">
             {filters.map(([key,label,count])=><button key={key} aria-pressed={filter===key} onClick={()=>setFilter(key)}><span>{label}</span><span className="queue-filter-count">{count}</span></button>)}
           </div>
-          <div className="sort-wrap"><select className="queue-sort" value={sort} onChange={e=>setSort(e.target.value)} aria-label="Sort submissions">
+          <div className="sort-wrap"><span className="select-shell"><select className="queue-sort" value={sort} onChange={e=>setSort(e.target.value)} aria-label="Sort submissions">
               <option value="recommended">Recommended order</option>
               <option value="newest">Newest first</option>
               <option value="name">Candidate name</option>
-            </select><button className="sort-help" aria-label="How recommended order works">?<span role="tooltip">Ready, complete submissions come first. Recovery cases follow. Completed reviews stay visible for auditability.</span></button></div>
+            </select><span className="select-caret"><I.chevD/></span></span><button className="sort-help" aria-label="How recommended order works">?<span role="tooltip">Ready, complete submissions come first. Recovery cases follow. Completed reviews stay visible for auditability.</span></button></div>
         </div>
         <section className="queue-list" data-tour="home-queue" aria-label="Candidate submissions" aria-live="polite">
           <div className="queue-list-head" aria-hidden="true"><span>Candidate and submission</span><span>Review state</span><span>Materials</span><span>Submitted</span><span/></div>
@@ -3005,11 +3033,20 @@ const TOUR_SETS={
     {sel:'[data-tour="cal-conflict"]',title:"Disagreement becomes work",body:"Conflicting reviewer signals stay visible and block confirmation until a human records the resolution."},
     {sel:'[data-tour="cal-tabs"]',title:"Three decision modes",body:"Overview tracks the field, comparison keeps evidence side by side, and the record creates a clean hiring handoff."},
   ],
+  handoff:[
+    {sel:'[data-tour="handoff-summary"]',title:"Close the loop visibly",body:"Rina gets a clear confirmation state with the exact finalists moved forward. Nothing disappears into a silent background action."},
+    {sel:'[data-tour="handoff-route"]',title:"Show what travels forward",body:"The route names the next round and the evidence package while avoiding a false claim that an external message was sent."},
+    {sel:'[data-tour="handoff-actions"]',title:"Return with new context",body:"Returning home adds the next-round task to Rina’s day, preserving continuity between decision and follow-up work."},
+  ],
   system:[
     {sel:'[data-tour="system-intro"]',title:"A separate style guide",body:"Visual system documentation stays separate from contextual design decisions, so each tool has one clear job."},
     {sel:'[data-tour="system-tokens"]',title:"Built from semantic rules",body:"Surfaces, type, spacing, states, and accessibility constraints are reusable across every recruiter screen."},
   ],
 };
+
+function BootScreen(){
+  return <div className="boot-screen" role="status" aria-label="Preparing Ledger"><div className="boot-lockup"><span className="boot-logo"><LedgerBrand compact/></span><div className="boot-tagline">Evidence first. <span>Decisions human.</span></div><span className="boot-rule" aria-hidden="true"><i/></span></div></div>;
+}
 
 function Root(){
   const [view,setView]=useState("home");
@@ -3019,16 +3056,20 @@ function Root(){
   const [tourStep,setTourStep]=useState(0);
   const [reviews,setReviews]=useState(()=>{
     try {
+      const current=JSON.parse(localStorage.getItem("ledger-reviews-v3")||"null");
+      if(current) return current;
       const saved=JSON.parse(localStorage.getItem("ledger-reviews-v2")||"{}");
-      const baseline={product:4,craft:4,code:3,comms:3};
-      return {...saved,"c-lin":{...(saved["c-lin"]||{}),scores:{...baseline,...(saved["c-lin"]?.scores||{})}}};
+      const sid={scores:{product:3,craft:3,code:3,comms:3},notes:{},decision:"go",memo:"Strong product framing and clear interaction model. Advance for a deeper systems conversation.",done:true,evidence:["Prototype behavior reviewed","README tradeoffs reviewed"]};
+      const lin={scores:{product:4,craft:4,code:3,comms:3},notes:{},decision:"go",memo:"Distinct spatial concept with a clear interaction thesis. Advance and test implementation depth.",done:true,evidence:["Prototype behavior reviewed","Source structure reviewed"]};
+      return {...saved,"c-sid":sid,"c-lin":lin};
     }
     catch(e){ return {}; }
   });
   const [reduced,setReduced]=useState(false);
   /* This is the authored alternate: it opens in its dark review-room mode.
      The light theme remains available for legibility and comparison. */
-  const [theme,setTheme]=useState('dark');
+  const [theme,setTheme]=useState(()=>{try{return localStorage.getItem("ledger-theme-v1")||"dark"}catch(e){return "dark"}});
+  const [booting,setBooting]=useState(()=>{try{return !REDUCED&&!sessionStorage.getItem("ledger-boot-v1")}catch(e){return !REDUCED}});
 
   /* probe once: only apply tier 2 refraction where the engine can do it */
   useEffect(()=>{
@@ -3038,8 +3079,10 @@ function Root(){
     document.documentElement.setAttribute("data-transparency", reduced?"reduced":"full");
   },[reduced]);
   useEffect(()=>{ document.documentElement.setAttribute("data-theme", theme); },[theme]);
+  useEffect(()=>{try{localStorage.setItem("ledger-theme-v1",theme)}catch(e){}},[theme]);
+  useEffect(()=>{if(!booting)return;const id=setTimeout(()=>{try{sessionStorage.setItem("ledger-boot-v1","seen")}catch(e){}setBooting(false)},960);return()=>clearTimeout(id)},[booting]);
   useEffect(()=>{
-    try { localStorage.setItem("ledger-reviews-v2",JSON.stringify(reviews)); }
+    try { localStorage.setItem("ledger-reviews-v3",JSON.stringify(reviews)); }
     catch(e){}
   },[reviews]);
   useEffect(()=>{try{localStorage.setItem("ledger-ui-v1",JSON.stringify(ui))}catch(e){}},[ui]);
@@ -3052,15 +3095,16 @@ function Root(){
   };
   const a11y={reduced,setReduced,theme,setTheme};
   const openTour=()=>{setTourStep(0);setTourOpen(true)};
+  if(booting) return <Fragment><GlassFilter/><BootScreen/></Fragment>;
   return (
     <Fragment>
       <GlassFilter/>
       <div className="scrollprog" aria-hidden="true"/>
-      {view==="home"   && <div className="viewfade" key="home"><Landing onOpen={open} onCalibrate={()=>go("calibrate")} onSystem={()=>go("system")} onTour={openTour} a11y={a11y} reviews={reviews}/></div>}
+      {view==="home"   && <div className="viewfade" key="home"><Landing onOpen={open} onCalibrate={()=>go("calibrate")} onSystem={()=>go("system")} onTour={openTour} a11y={a11y} reviews={reviews} ui={ui} setUi={setUi}/></div>}
       {view==="review" && <div className="viewfade" key="review"><Review idx={idx} setIdx={setIdx} onBack={()=>go("home")} onSystem={()=>go("system")} onTour={openTour} onCalibrate={()=>go("calibrate")} a11y={a11y} reviews={reviews} setReviews={setReviews} ui={ui} setUi={setUi}/></div>}
       {view==="calibrate" && <div className="viewfade" key="calibrate"><Calibrate reviews={reviews} onBack={()=>go("home")} onOpen={open} onSystem={()=>go("system")} onTour={openTour} a11y={a11y} ui={ui} setUi={setUi}/></div>}
-      {view==="system" && <div key="system"><SystemChrome onBack={()=>go("home")} onCalibrate={()=>go("calibrate")} onTour={openTour} onSystem={()=>{}}/><SystemView/></div>}
-      {tourOpen&&<Tour items={TOUR_SETS[view]||REVIEW_TOUR} step={tourStep} setStep={setTourStep} close={()=>setTourOpen(false)}/>}
+      {view==="system" && <div key="system"><SystemChrome onBack={()=>go("home")} onCalibrate={()=>go("calibrate")} onTour={openTour} onSystem={()=>{}} a11y={a11y}/><SystemView/></div>}
+      {tourOpen&&<Tour items={TOUR_SETS[view==="calibrate"&&ui.calFinalized?"handoff":view]||REVIEW_TOUR} step={tourStep} setStep={setTourStep} close={()=>setTourOpen(false)}/>}
     </Fragment>
   );
 }
@@ -3068,7 +3112,7 @@ function Root(){
 function ThemeToggle({a11y}){
   const dark = a11y.theme === 'dark';
   return (
-    <button className="kbtn" onClick={()=>a11y.setTheme(dark?'light':'dark')}
+    <button className="kbtn theme-toggle nav-icon-button" onClick={()=>a11y.setTheme(dark?'light':'dark')}
       aria-label={dark?'Switch to the light theme':'Switch to the dark theme'}
       title={dark?'Light theme':'Dark theme'}>
       {dark ? <I.sun/> : <I.moon/>}<span className="hidem">{dark?'Light':'Dark'}</span>
@@ -3085,8 +3129,8 @@ function TransparencyToggle({a11y}){
   );
 }
 
-function SystemChrome({onBack,onCalibrate,onTour,onSystem}){
-  return <AppNav active="system" onHome={onBack} onCalibrate={onCalibrate} onTour={onTour} onSystem={onSystem}/>;
+function SystemChrome({onBack,onCalibrate,onTour,onSystem,a11y}){
+  return <AppNav active="system" onHome={onBack} onCalibrate={onCalibrate} onTour={onTour} onSystem={onSystem} a11y={a11y}/>;
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<Root/>);
