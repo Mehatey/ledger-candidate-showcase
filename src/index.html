@@ -1333,6 +1333,23 @@ p,.lede,.tourcard p,.empty p{text-wrap:pretty}
 .decision-record{padding:24px}.decision-record h2{font-size:24px}.decision-record>p{font-size:14px;margin-top:7px}.decision-list>div{font-size:13.5px;padding:15px 0}.sys-h h1{font-size:36px}.sys-h p{font-size:15px}.sysview{padding-top:42px}
 @media(max-width:1200px){.app-nav{padding:0 24px}.review-summary{grid-template-columns:minmax(330px,1.35fr) repeat(3,minmax(120px,.55fr))}.queue-main,.cal-main{padding-left:28px;padding-right:28px}.cal-layout{grid-template-columns:minmax(0,1fr) 320px}.cal-list-hd,.cal-row{grid-template-columns:minmax(220px,1.2fr) 105px 94px 105px 90px 24px}.cal-signal{display:none}}
 @media(prefers-reduced-motion:reduce){.greeting-caret{animation:none}.nav-icon-button::after,.sort-help span,.compare-breakdown i b{transition:none}}
+/* Motion polish: quiet feedback that preserves the reviewer's concentration. */
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.queue-stats strong,.rollup .n,.cal-score,.cal-readiness strong,.candidate-nav{font-variant-numeric:tabular-nums}
+button:not(:disabled){transition-property:scale,transform,background-color,color,border-color,box-shadow,filter,opacity;transition-duration:150ms;transition-timing-function:cubic-bezier(.2,0,0,1)}
+button:not(:disabled):active{scale:.96}
+.nav-link{overflow:hidden;position:relative}.nav-link::before{background:var(--acid);bottom:0;content:"";height:2px;left:10px;position:absolute;right:10px;transform:scaleX(0);transform-origin:center;transition:transform 180ms cubic-bezier(.2,0,0,1)}.nav-link.active::before{transform:scaleX(1)}
+.queue-row{animation:queue-enter 360ms cubic-bezier(.2,0,0,1) both}.queue-row:nth-child(2){animation-delay:35ms}.queue-row:nth-child(3){animation-delay:80ms}.queue-row:nth-child(4){animation-delay:125ms}.queue-row:nth-child(5){animation-delay:170ms}.queue-row:nth-child(6){animation-delay:215ms}
+.artifact-panel>*,.cal-layout,.compare-view,.decision-record{animation:panel-enter 260ms cubic-bezier(.2,0,0,1) both}
+.artifact-tabs button,.cal-tabs button{transition-property:color,border-color,background-color;transition-duration:180ms;transition-timing-function:cubic-bezier(.2,0,0,1)}
+.seg button.sel{animation:score-select 220ms cubic-bezier(.2,0,0,1)}.segind{transition:transform 220ms cubic-bezier(.2,0,0,1)}
+.review-stage{transition:grid-template-columns 180ms cubic-bezier(.2,0,0,1)}.review-stage.is-resizing{transition:none}
+.spotlight{transition-property:top,left,width,height,opacity,box-shadow;transition-duration:240ms;transition-timing-function:cubic-bezier(.2,0,0,1)}
+.tourcard{animation:tour-card-in 220ms cubic-bezier(.2,0,0,1) both}
+.review-celebration{align-items:center;background:rgba(9,11,15,.88);border:1px solid var(--acid-line);border-radius:14px;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;gap:6px;left:50%;padding:20px 28px;pointer-events:none;position:fixed;text-align:center;top:22%;transform:translateX(-50%);z-index:95;animation:celebration-in 900ms cubic-bezier(.2,0,0,1) both}.celebration-mark{align-items:center;background:var(--acid);border-radius:50%;color:var(--canvas);display:flex;height:38px;justify-content:center;width:38px;animation:mark-in 300ms cubic-bezier(.2,0,0,1) both}.celebration-mark svg{height:18px;width:18px}.review-celebration strong{font-size:15px}.review-celebration span{color:var(--ink-2);font-size:12px}
+::view-transition-old(root){animation:vt-out 120ms ease-in both}::view-transition-new(root){animation:vt-in 220ms cubic-bezier(.2,0,0,1) both}
+@keyframes queue-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes panel-enter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}@keyframes score-select{from{opacity:.72;scale:.92}to{opacity:1;scale:1}}@keyframes tour-card-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}@keyframes mark-in{from{opacity:0;scale:.25;filter:blur(4px)}to{opacity:1;scale:1;filter:blur(0)}}@keyframes celebration-in{0%{opacity:0;transform:translate(-50%,8px)}18%,78%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-4px)}}@keyframes vt-out{to{opacity:0}}@keyframes vt-in{from{opacity:0}}
+@media(prefers-reduced-motion:reduce){button:not(:disabled),.nav-link::before,.queue-row,.artifact-panel>*,.cal-layout,.compare-view,.decision-record,.seg button.sel,.segind,.review-stage,.spotlight,.tourcard,.review-celebration,.celebration-mark{animation:none!important;transition:none!important}.queue-row,.artifact-panel>*,.cal-layout,.compare-view,.decision-record,.tourcard{opacity:1!important;transform:none!important}::view-transition-old(root),::view-transition-new(root){animation:none!important}}
 </style>
 </head>
 <body>
@@ -2346,6 +2363,8 @@ function SkeletonStage(){
 function Review({idx,setIdx,onBack,onSystem,onTour,onCalibrate,a11y,reviews,setReviews,ui,setUi}){
   const [help,setHelp]=useState(false);
   const [toast,setToast]=useState(null);
+  const [celebrate,setCelebrate]=useState(false);
+  const [resizing,setResizing]=useState(false);
   const [focusRow,setFocusRow]=useState(0);
   const [undo,setUndo]=useState(null);
   const [lightbox,setLightbox]=useState(null);
@@ -2393,11 +2412,12 @@ function Review({idx,setIdx,onBack,onSystem,onTour,onCalibrate,a11y,reviews,setR
   const resizeRail=(event)=>{
     if(window.innerWidth<=1200)return;
     event.preventDefault();
+    setResizing(true);
     const bounds=event.currentTarget.parentElement.getBoundingClientRect();
     const setFromPointer=(clientX)=>setRailWidth(Math.max(360,Math.min(railMax,bounds.right-clientX-10)));
     setFromPointer(event.clientX);
     const move=e=>setFromPointer(e.clientX);
-    const stop=()=>{window.removeEventListener("pointermove",move);window.removeEventListener("pointerup",stop);};
+    const stop=()=>{setResizing(false);window.removeEventListener("pointermove",move);window.removeEventListener("pointerup",stop);};
     window.addEventListener("pointermove",move);window.addEventListener("pointerup",stop);
   };
 
@@ -2416,13 +2436,15 @@ function Review({idx,setIdx,onBack,onSystem,onTour,onCalibrate,a11y,reviews,setR
   const submit=()=>{
     patch({done:true});
     setToast(`Review saved for ${cand.name}`);
+    setCelebrate(true);
     setUndo(cand.id);
+    setTimeout(()=>setCelebrate(false),1100);
     setTimeout(()=>{ setToast(null); setUndo(null); },6000);
   };
   const undoSubmit=()=>{
     if(!undo) return;
     setReviews(st=>({...st,[undo]:{...st[undo],done:false}}));
-    setToast(null); setUndo(null);
+    setToast(null); setUndo(null); setCelebrate(false);
   };
 
   useEffect(()=>{
@@ -2484,7 +2506,7 @@ function Review({idx,setIdx,onBack,onSystem,onTour,onCalibrate,a11y,reviews,setR
         <button onClick={()=>scrollReview("decision")}><I.gavel/>Decision <span className="dockmeta">{rv.decision||"unset"}</span></button>
       </div>
 
-      <div className={"stage review-stage "+(dir>0?"from-right":"from-left")} style={{"--review-rail-width":railWidth+"px"}} key={cand.id}>
+      <div className={"stage review-stage "+(dir>0?"from-right":"from-left")+(resizing?" is-resizing":"")} style={{"--review-rail-width":railWidth+"px"}} key={cand.id}>
         <div className="main compact-main">
           <section className="review-summary" data-tour="summary">
             <div className="summary-person">
@@ -2539,6 +2561,7 @@ function Review({idx,setIdx,onBack,onSystem,onTour,onCalibrate,a11y,reviews,setR
 
       {lightbox!=null && <Lightbox shots={cand.shots} index={lightbox} setIndex={setLightbox} onClose={()=>setLightbox(null)}/>}
       {help && <Help close={()=>setHelp(false)}/>}
+      {celebrate && <div className="review-celebration" role="status" aria-live="polite"><div className="celebration-mark"><I.check/></div><strong>Review complete</strong><span>{cand.name} is ready for calibration.</span></div>}
       {toast && <div className="toast lg" role="status">
         <span className="tk"><I.check/></span>
         <span>{toast}</span>
@@ -2573,7 +2596,10 @@ function Calibrate({reviews,onBack,onOpen,onSystem,onTour,a11y,ui,setUi}){
   const readiness=Math.round(((rows.length-remaining)/rows.length)*70+(resolved?20:0)+(rows.filter(r=>r.decision).length/rows.length)*10);
   const scoreLabel=n=>n==null?"Unscored":`${n} / 16`;
   const statusLabel=d=>d==="go"?"Advance":d==="hold"?"Hold":d==="stop"?"Pass":"Needs review";
-  const choose=(slot,id)=>setUi(s=>{const a=s.compareA||"c-sid",b=s.compareB||"c-lin";return slot==="a"?{...s,compareA:id,compareB:id===b?a:b}:{...s,compareB:id,compareA:id===a?b:a}});
+  const choose=(slot,id)=>{
+    const update=()=>setUi(s=>{const a=s.compareA||"c-sid",b=s.compareB||"c-lin";return slot==="a"?{...s,compareA:id,compareB:id===b?a:b}:{...s,compareB:id,compareA:id===a?b:a}});
+    if(document.startViewTransition&&!REDUCED) document.startViewTransition(update); else update();
+  };
   const comparedA=rows.find(r=>r.c.id===compareA),comparedB=rows.find(r=>r.c.id===compareB);
   const compareRead=comparedA.score==null||comparedB.score==null
     ? `${comparedA.score==null?comparedA.c.name:comparedB.c.name} still needs a human score. Keep the comparison open, then decide from evidence rather than a blended total.`
