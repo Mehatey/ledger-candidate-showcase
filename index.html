@@ -1685,6 +1685,23 @@ button:not(:disabled),.nav-link,.queue-row,.compare-preview{transition:backgroun
 .handoff-screen{position:relative}.handoff-confetti{height:224px;left:50%;overflow:visible;pointer-events:none;position:absolute;top:-24px;transform:translateX(-50%);width:560px}.confetti-bit{animation:confetti-flight 760ms cubic-bezier(.16,1,.3,1) both;animation-delay:var(--delay);background:var(--acid);border-radius:2px;height:12px;left:50%;position:absolute;top:72px;width:8px}.confetti-bit.c1{background:var(--go)}.confetti-bit.c2{background:var(--hold)}.confetti-bit.c3{background:var(--ink)}.handoff-mark{position:relative}.handoff-mark::after{border:1px solid var(--go);border-radius:50%;content:"";inset:-8px;opacity:0;position:absolute;animation:success-ring 520ms 80ms cubic-bezier(.16,1,.3,1) both}@keyframes confetti-flight{0%{opacity:0;transform:translate3d(0,16px,0) rotate(0) scale(.5)}12%{opacity:1}55%{opacity:1;transform:translate3d(var(--x1),var(--y1),0) rotate(var(--r1)) scale(1)}100%{opacity:0;transform:translate3d(var(--x2),var(--y2),0) rotate(var(--r2)) scale(.8)}}@keyframes success-ring{0%{opacity:.8;transform:scale(.6)}100%{opacity:0;transform:scale(1.45)}}
 @media(max-width:1080px){.app-nav{gap:4px}.nav-workload{margin-left:4px}.nav-workload-item{padding:0 6px}.app-nav .nav-link{padding:0 8px}}
 @media(prefers-reduced-motion:reduce){.handoff-confetti{display:none}.handoff-mark::after{animation:none;display:none}}
+
+/* Branded precision cursor. Native text cursor and all coarse-pointer behavior stay intact. */
+.custom-cursor{display:none}
+@media (pointer:fine) and (hover:hover){
+  html.has-custom-cursor,html.has-custom-cursor a,html.has-custom-cursor button,html.has-custom-cursor select,html.has-custom-cursor [role="button"],html.has-custom-cursor [role="tab"],html.has-custom-cursor [role="radio"],html.has-custom-cursor [role="link"]{cursor:none!important}
+  html.has-custom-cursor input,html.has-custom-cursor textarea,html.has-custom-cursor [contenteditable="true"]{cursor:text!important}
+  .custom-cursor{align-items:center;display:flex;height:40px;justify-content:center;left:0;opacity:0;pointer-events:none;position:fixed;top:0;transform:translate3d(-80px,-80px,0) translate(-50%,-50%);width:40px;z-index:var(--z-tooltip)}
+  .custom-cursor::before{background:color-mix(in srgb,var(--acid) 0%,transparent);border:1px solid color-mix(in srgb,var(--acid) 72%,transparent);border-radius:50%;content:"";height:24px;position:absolute;transform:scale(1);transition:background-color 140ms cubic-bezier(.16,1,.3,1),border-color 140ms cubic-bezier(.16,1,.3,1),transform 140ms cubic-bezier(.16,1,.3,1);width:24px}
+  .custom-cursor::after{background:var(--acid);border-radius:50%;box-shadow:0 0 8px color-mix(in srgb,var(--acid) 45%,transparent);content:"";height:4px;position:absolute;transition:transform 140ms cubic-bezier(.16,1,.3,1);width:4px}
+  .custom-cursor.is-visible{opacity:1}
+  .custom-cursor.is-interactive::before{background:var(--acid-dim);border-color:color-mix(in srgb,var(--acid) 58%,var(--ink));box-shadow:0 0 0 1px color-mix(in srgb,var(--canvas) 34%,transparent);transform:scale(1.42)}
+  .custom-cursor.is-interactive::after{transform:scale(1.25)}
+  .custom-cursor.is-pressed::before{transform:scale(.76)}
+  .custom-cursor.is-pressed::after{transform:scale(.76)}
+  .custom-cursor.is-text{opacity:0}
+}
+@media(prefers-reduced-motion:reduce){.custom-cursor::before,.custom-cursor::after{transition:none!important}}
 </style>
 </head>
 <body>
@@ -3045,6 +3062,41 @@ const TOUR_SETS = {
     { sel: '[data-tour="system-tokens"]', title: "Built from semantic rules", body: "Surfaces, type, spacing, states, and accessibility constraints are reusable across every recruiter screen." }
   ]
 };
+function CustomCursor() {
+  const cursorRef = useRef(null);
+  useEffect(() => {
+    const fine = window.matchMedia("(pointer:fine) and (hover:hover)");
+    if (!fine.matches) return;
+    const cursor = cursorRef.current;
+    const root = document.documentElement;
+    if (!cursor) return;
+    root.classList.add("has-custom-cursor");
+    const interactive = 'a,button,select,[role="button"],[role="tab"],[role="radio"],[role="link"]';
+    const textEntry = 'input,textarea,[contenteditable="true"]';
+    const move = (event) => {
+      cursor.style.transform = `translate3d(${event.clientX}px,${event.clientY}px,0) translate(-50%,-50%)`;
+      cursor.classList.add("is-visible");
+      const target = event.target instanceof Element ? event.target : null;
+      cursor.classList.toggle("is-interactive", !!(target == null ? void 0 : target.closest(interactive)));
+      cursor.classList.toggle("is-text", !!(target == null ? void 0 : target.closest(textEntry)));
+    };
+    const down = () => cursor.classList.add("is-pressed");
+    const up = () => cursor.classList.remove("is-pressed");
+    const leave = () => cursor.classList.remove("is-visible", "is-pressed");
+    window.addEventListener("pointermove", move, { passive: true });
+    window.addEventListener("pointerdown", down, { passive: true });
+    window.addEventListener("pointerup", up, { passive: true });
+    document.addEventListener("mouseleave", leave);
+    return () => {
+      root.classList.remove("has-custom-cursor");
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerdown", down);
+      window.removeEventListener("pointerup", up);
+      document.removeEventListener("mouseleave", leave);
+    };
+  }, []);
+  return /* @__PURE__ */ React.createElement("span", { ref: cursorRef, className: "custom-cursor", "aria-hidden": "true" });
+}
 function BootScreen() {
   return /* @__PURE__ */ React.createElement("div", { className: "boot-screen", role: "status", "aria-label": "Preparing Ledger" }, /* @__PURE__ */ React.createElement("div", { className: "boot-lockup" }, /* @__PURE__ */ React.createElement("span", { className: "boot-logo" }, /* @__PURE__ */ React.createElement(LedgerBrand, { compact: true })), /* @__PURE__ */ React.createElement("div", { className: "boot-tagline" }, "Evidence first. ", /* @__PURE__ */ React.createElement("span", null, "Decisions human.")), /* @__PURE__ */ React.createElement("span", { className: "boot-rule", "aria-hidden": "true" }, /* @__PURE__ */ React.createElement("i", null))));
 }
@@ -3149,8 +3201,8 @@ function Root() {
     setTourStep(0);
     setTourOpen(true);
   };
-  if (booting) return /* @__PURE__ */ React.createElement(Fragment, null, /* @__PURE__ */ React.createElement(GlassFilter, null), /* @__PURE__ */ React.createElement(BootScreen, null));
-  return /* @__PURE__ */ React.createElement(Fragment, null, /* @__PURE__ */ React.createElement(GlassFilter, null), /* @__PURE__ */ React.createElement("div", { className: "scrollprog", "aria-hidden": "true" }), view === "home" && /* @__PURE__ */ React.createElement("div", { className: "viewfade", key: "home" }, /* @__PURE__ */ React.createElement(Landing, { onOpen: open, onCalibrate: () => go("calibrate"), onSystem: () => go("system"), onTour: openTour, a11y, reviews, ui, setUi })), view === "review" && /* @__PURE__ */ React.createElement("div", { className: "viewfade", key: "review" }, /* @__PURE__ */ React.createElement(Review, { idx, setIdx, onBack: () => go("home"), onSystem: () => go("system"), onTour: openTour, onCalibrate: () => go("calibrate"), a11y, reviews, setReviews, ui, setUi })), view === "calibrate" && /* @__PURE__ */ React.createElement("div", { className: "viewfade", key: "calibrate" }, /* @__PURE__ */ React.createElement(Calibrate, { reviews, onBack: () => go("home"), onOpen: open, onSystem: () => go("system"), onTour: openTour, a11y, ui, setUi })), view === "system" && /* @__PURE__ */ React.createElement("div", { key: "system" }, /* @__PURE__ */ React.createElement(SystemChrome, { onBack: () => go("home"), onCalibrate: () => go("calibrate"), onTour: openTour, onSystem: () => {
+  if (booting) return /* @__PURE__ */ React.createElement(Fragment, null, /* @__PURE__ */ React.createElement(GlassFilter, null), /* @__PURE__ */ React.createElement(CustomCursor, null), /* @__PURE__ */ React.createElement(BootScreen, null));
+  return /* @__PURE__ */ React.createElement(Fragment, null, /* @__PURE__ */ React.createElement(GlassFilter, null), /* @__PURE__ */ React.createElement(CustomCursor, null), /* @__PURE__ */ React.createElement("div", { className: "scrollprog", "aria-hidden": "true" }), view === "home" && /* @__PURE__ */ React.createElement("div", { className: "viewfade", key: "home" }, /* @__PURE__ */ React.createElement(Landing, { onOpen: open, onCalibrate: () => go("calibrate"), onSystem: () => go("system"), onTour: openTour, a11y, reviews, ui, setUi })), view === "review" && /* @__PURE__ */ React.createElement("div", { className: "viewfade", key: "review" }, /* @__PURE__ */ React.createElement(Review, { idx, setIdx, onBack: () => go("home"), onSystem: () => go("system"), onTour: openTour, onCalibrate: () => go("calibrate"), a11y, reviews, setReviews, ui, setUi })), view === "calibrate" && /* @__PURE__ */ React.createElement("div", { className: "viewfade", key: "calibrate" }, /* @__PURE__ */ React.createElement(Calibrate, { reviews, onBack: () => go("home"), onOpen: open, onSystem: () => go("system"), onTour: openTour, a11y, ui, setUi })), view === "system" && /* @__PURE__ */ React.createElement("div", { key: "system" }, /* @__PURE__ */ React.createElement(SystemChrome, { onBack: () => go("home"), onCalibrate: () => go("calibrate"), onTour: openTour, onSystem: () => {
   }, a11y }), /* @__PURE__ */ React.createElement(SystemView, null)), tourOpen && /* @__PURE__ */ React.createElement(Tour, { items: TOUR_SETS[view === "calibrate" && ui.calFinalized ? "handoff" : view] || REVIEW_TOUR, step: tourStep, setStep: setTourStep, close: () => setTourOpen(false) }));
 }
 function ThemeToggle({ a11y }) {
