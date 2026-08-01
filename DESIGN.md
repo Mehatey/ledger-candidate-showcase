@@ -20,11 +20,11 @@ A hiring lead reviews a short list on a laptop between interviews. The surface m
 
 - The entry screen is a recruiter queue, not a marketing page. It opens with workload state, search, filters, sort, and a prioritized list of candidate profiles.
 - Queue order places complete, reviewable submissions before submissions that need context. Completed reviews stay visible for reference.
-- Desktop uses an artifact stage plus a 400 px review rail.
+- Wide desktop uses an artifact stage plus a 400 px review rail.
 - The candidate summary is one compact grid with identity, status, runtime, and evidence coverage.
 - Artifact tabs reuse one panel instead of stacking four separate sections.
-- At 1200 px the review rail moves below the work.
-- At 600 px the summary collapses to identity, tabs scroll horizontally, and score criteria become a single column.
+- From 961 to 1200 px the review stays side by side with a 340 px rail, a two-row summary, and a compact scorecard.
+- Below 961 px the review rail moves below the work. Mobile is not part of the final exercise scope.
 - At 900 px the queue becomes a compact profile list. Material detail and submitted date yield to candidate identity and review state.
 - Spacing follows an 8 px base with 4 px half steps.
 
