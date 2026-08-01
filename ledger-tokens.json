@@ -1,0 +1,503 @@
+{
+  "$description": "Ledger design tokens. In Figma: Plugins, Tokens Studio, Import, choose this file, then Export to Figma variables. The light and dark sets become two modes on one collection. Naming follows function rather than appearance, so a theme is a value swap and never a new component rule. Every colour pairing in both sets was verified against WCAG AA with contrast.js.",
+  "global": {
+    "space": {
+      "1": {
+        "$type": "number",
+        "$value": 4,
+        "$description": "4px step"
+      },
+      "2": {
+        "$type": "number",
+        "$value": 8,
+        "$description": "8px step"
+      },
+      "3": {
+        "$type": "number",
+        "$value": 12,
+        "$description": "12px step"
+      },
+      "4": {
+        "$type": "number",
+        "$value": 16,
+        "$description": "16px step"
+      },
+      "5": {
+        "$type": "number",
+        "$value": 24,
+        "$description": "24px step"
+      },
+      "6": {
+        "$type": "number",
+        "$value": 32,
+        "$description": "32px step"
+      },
+      "7": {
+        "$type": "number",
+        "$value": 48,
+        "$description": "48px step"
+      },
+      "8": {
+        "$type": "number",
+        "$value": 64,
+        "$description": "64px step"
+      }
+    },
+    "radius": {
+      "chip": {
+        "$type": "number",
+        "$value": 6,
+        "$description": "Chips, tags, keys"
+      },
+      "control": {
+        "$type": "number",
+        "$value": 9,
+        "$description": "Buttons and segmented controls"
+      },
+      "card": {
+        "$type": "number",
+        "$value": 14,
+        "$description": "Media frames and screenshots"
+      },
+      "panel": {
+        "$type": "number",
+        "$value": 18,
+        "$description": "Cards and rail panels"
+      },
+      "sheet": {
+        "$type": "number",
+        "$value": 22,
+        "$description": "Tour card, palette, tiles"
+      }
+    },
+    "font": {
+      "display": {
+        "$type": "fontFamilies",
+        "$value": "Instrument Serif",
+        "$description": "Names and headings"
+      },
+      "sans": {
+        "$type": "fontFamilies",
+        "$value": "Instrument Sans",
+        "$description": "Interface text"
+      },
+      "mono": {
+        "$type": "fontFamilies",
+        "$value": "JetBrains Mono",
+        "$description": "Metadata and numbers"
+      }
+    },
+    "type": {
+      "display": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Instrument Serif",
+          "fontWeight": "Regular",
+          "fontSize": "34",
+          "lineHeight": "115%",
+          "letterSpacing": "-2%"
+        },
+        "$description": "Candidate names, page titles"
+      },
+      "section": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Instrument Sans",
+          "fontWeight": "SemiBold",
+          "fontSize": "13",
+          "lineHeight": "140%",
+          "letterSpacing": "-0.4%"
+        },
+        "$description": "Card headers"
+      },
+      "lede": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Instrument Sans",
+          "fontWeight": "Regular",
+          "fontSize": "15.5",
+          "lineHeight": "160%",
+          "letterSpacing": "-0.4%"
+        },
+        "$description": "Summaries"
+      },
+      "body": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "Instrument Sans",
+          "fontWeight": "Regular",
+          "fontSize": "13.5",
+          "lineHeight": "170%",
+          "letterSpacing": "-0.4%"
+        },
+        "$description": "Long form"
+      },
+      "meta": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "JetBrains Mono",
+          "fontWeight": "Regular",
+          "fontSize": "11.5",
+          "lineHeight": "150%",
+          "letterSpacing": "0"
+        },
+        "$description": "Counts and dates"
+      },
+      "eyebrow": {
+        "$type": "typography",
+        "$value": {
+          "fontFamily": "JetBrains Mono",
+          "fontWeight": "Regular",
+          "fontSize": "10.5",
+          "lineHeight": "150%",
+          "letterSpacing": "14%"
+        },
+        "$description": "Section labels"
+      }
+    },
+    "motion": {
+      "enter": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.16,
+          1,
+          0.3,
+          1
+        ],
+        "$description": "Entrances, 620ms"
+      },
+      "exit": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.4,
+          0,
+          1,
+          1
+        ],
+        "$description": "Exits, 220ms"
+      },
+      "move": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.32,
+          0.72,
+          0,
+          1
+        ],
+        "$description": "Positional moves, 320ms"
+      },
+      "durEnter": {
+        "$type": "number",
+        "$value": 620,
+        "$description": "ms"
+      },
+      "durExit": {
+        "$type": "number",
+        "$value": 220,
+        "$description": "ms"
+      },
+      "durMove": {
+        "$type": "number",
+        "$value": 320,
+        "$description": "ms"
+      },
+      "stagger": {
+        "$type": "number",
+        "$value": 60,
+        "$description": "ms between siblings"
+      }
+    },
+    "layout": {
+      "maxWidth": {
+        "$type": "number",
+        "$value": 1240,
+        "$description": "Content cap"
+      },
+      "rail": {
+        "$type": "number",
+        "$value": 340,
+        "$description": "Evaluation rail, fixed"
+      },
+      "gutter": {
+        "$type": "number",
+        "$value": 32,
+        "$description": "Column gap"
+      },
+      "bpTablet": {
+        "$type": "number",
+        "$value": 1080,
+        "$description": "Stacks below this"
+      },
+      "bpMobile": {
+        "$type": "number",
+        "$value": 720,
+        "$description": "Single column below this"
+      }
+    }
+  },
+  "light": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": "#F5F3EF",
+        "$description": "App canvas"
+      },
+      "raised": {
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "$description": "Cards and panels"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "#FBFAF6",
+        "$description": "Inset fields and rollups"
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "#211E18",
+        "$description": "Headings and body"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "#67625A",
+        "$description": "Supporting copy"
+      },
+      "tertiary": {
+        "$type": "color",
+        "$value": "#736F67",
+        "$description": "Metadata and labels"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "#B8B2A6",
+        "$description": "Disabled controls only"
+      }
+    },
+    "action": {
+      "primary": {
+        "$type": "color",
+        "$value": "#34518F",
+        "$description": "Primary buttons, selection, focus ring"
+      },
+      "primaryHover": {
+        "$type": "color",
+        "$value": "#5470B4",
+        "$description": "Hover and second gradient stop"
+      }
+    },
+    "status": {
+      "pass": {
+        "$type": "color",
+        "$value": "#3C7656",
+        "$description": "Healthy, advance"
+      },
+      "passBg": {
+        "$type": "color",
+        "$value": "#E9F2ED",
+        "$description": "Pass pill fill"
+      },
+      "caution": {
+        "$type": "color",
+        "$value": "#8D6227",
+        "$description": "Needs review, hold"
+      },
+      "cautionBg": {
+        "$type": "color",
+        "$value": "#F7EFE2",
+        "$description": "Caution pill fill"
+      },
+      "fail": {
+        "$type": "color",
+        "$value": "#B4483D",
+        "$description": "Thin signal, failed build"
+      },
+      "failBg": {
+        "$type": "color",
+        "$value": "#F8EAE8",
+        "$description": "Fail pill fill"
+      },
+      "info": {
+        "$type": "color",
+        "$value": "#3F5A8A",
+        "$description": "Previously reviewed"
+      },
+      "infoBg": {
+        "$type": "color",
+        "$value": "#ECEFF5",
+        "$description": "Info pill fill"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "#E4E1DB",
+        "$description": "Container hairlines"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "#D3CFC6",
+        "$description": "Dashed and emphasised"
+      },
+      "control": {
+        "$type": "color",
+        "$value": "#94918B",
+        "$description": "Form controls, meets 3:1"
+      }
+    },
+    "glass": {
+      "tint": {
+        "$type": "color",
+        "$value": "#FCFBF8",
+        "$description": "Chrome fill, applied at 72 percent alpha"
+      }
+    }
+  },
+  "dark": {
+    "surface": {
+      "page": {
+        "$type": "color",
+        "$value": "#14161B",
+        "$description": "App canvas"
+      },
+      "raised": {
+        "$type": "color",
+        "$value": "#1B1E25",
+        "$description": "Cards and panels"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "#20242C",
+        "$description": "Inset fields and rollups"
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "#ECEAE5",
+        "$description": "Headings and body"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "#A8A49C",
+        "$description": "Supporting copy"
+      },
+      "tertiary": {
+        "$type": "color",
+        "$value": "#8F8B83",
+        "$description": "Metadata and labels"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "#5A5750",
+        "$description": "Disabled controls only"
+      }
+    },
+    "action": {
+      "primary": {
+        "$type": "color",
+        "$value": "#8FAAE4",
+        "$description": "Primary buttons, selection, focus ring"
+      },
+      "primaryHover": {
+        "$type": "color",
+        "$value": "#A9BEEE",
+        "$description": "Hover and second gradient stop"
+      }
+    },
+    "status": {
+      "pass": {
+        "$type": "color",
+        "$value": "#6FBE92",
+        "$description": "Healthy, advance"
+      },
+      "passBg": {
+        "$type": "color",
+        "$value": "#26362E",
+        "$description": "Pass pill fill"
+      },
+      "caution": {
+        "$type": "color",
+        "$value": "#DFAE64",
+        "$description": "Needs review, hold"
+      },
+      "cautionBg": {
+        "$type": "color",
+        "$value": "#3A3125",
+        "$description": "Caution pill fill"
+      },
+      "fail": {
+        "$type": "color",
+        "$value": "#E58C82",
+        "$description": "Thin signal, failed build"
+      },
+      "failBg": {
+        "$type": "color",
+        "$value": "#3A2725",
+        "$description": "Fail pill fill"
+      },
+      "info": {
+        "$type": "color",
+        "$value": "#8FAAE4",
+        "$description": "Previously reviewed"
+      },
+      "infoBg": {
+        "$type": "color",
+        "$value": "#232A38",
+        "$description": "Info pill fill"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "#2A2D34",
+        "$description": "Container hairlines"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "#3A3E46",
+        "$description": "Dashed and emphasised"
+      },
+      "control": {
+        "$type": "color",
+        "$value": "#6A6E77",
+        "$description": "Form controls, meets 3:1"
+      }
+    },
+    "glass": {
+      "tint": {
+        "$type": "color",
+        "$value": "#1E222A",
+        "$description": "Chrome fill, applied at 74 percent alpha"
+      }
+    }
+  },
+  "$themes": [
+    {
+      "id": "light",
+      "name": "Light",
+      "selectedTokenSets": {
+        "global": "source",
+        "light": "enabled"
+      },
+      "group": "Theme"
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "selectedTokenSets": {
+        "global": "source",
+        "dark": "enabled"
+      },
+      "group": "Theme"
+    }
+  ],
+  "$metadata": {
+    "tokenSetOrder": [
+      "global",
+      "light",
+      "dark"
+    ]
+  }
+}
