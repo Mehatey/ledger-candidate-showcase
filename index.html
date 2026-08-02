@@ -3139,7 +3139,7 @@ function Root() {
   const [idx, setIdx] = useState(0);
   const [ui, setUi] = useState(() => {
     try {
-      return JSON.parse(localStorage.getItem("ledger-ui-v1") || "{}");
+      return JSON.parse(localStorage.getItem("ledger-ui-v2") || "{}");
     } catch (e) {
       return {};
     }
@@ -3148,12 +3148,10 @@ function Root() {
   const [tourStep, setTourStep] = useState(0);
   const [reviews, setReviews] = useState(() => {
     try {
-      const current = JSON.parse(localStorage.getItem("ledger-reviews-v3") || "null");
+      const current = JSON.parse(localStorage.getItem("ledger-reviews-v4") || "null");
       if (current) return current;
-      const saved = JSON.parse(localStorage.getItem("ledger-reviews-v2") || "{}");
-      const sid = { scores: { product: 3, craft: 3, code: 3, comms: 3 }, notes: {}, decision: "go", memo: "Strong product framing and clear interaction model. Advance for a deeper systems conversation.", done: true, evidence: ["Prototype behavior reviewed", "README tradeoffs reviewed"] };
       const lin = { scores: { product: 4, craft: 4, code: 3, comms: 3 }, notes: {}, decision: "go", memo: "Distinct spatial concept with a clear interaction thesis. Advance and test implementation depth.", done: true, evidence: ["Prototype behavior reviewed", "Source structure reviewed"] };
-      return { ...saved, "c-sid": sid, "c-lin": lin };
+      return { "c-lin": lin };
     } catch (e) {
       return {};
     }
@@ -3161,9 +3159,9 @@ function Root() {
   const [reduced, setReduced] = useState(false);
   const [theme, setTheme] = useState(() => {
     try {
-      return localStorage.getItem("ledger-theme-v1") || "dark";
+      return localStorage.getItem("ledger-theme-v2") || "light";
     } catch (e) {
-      return "dark";
+      return "light";
     }
   });
   const [booting, setBooting] = useState(() => {
@@ -3184,7 +3182,7 @@ function Root() {
   }, [theme]);
   useEffect(() => {
     try {
-      localStorage.setItem("ledger-theme-v1", theme);
+      localStorage.setItem("ledger-theme-v2", theme);
     } catch (e) {
     }
   }, [theme]);
@@ -3201,13 +3199,13 @@ function Root() {
   }, [booting]);
   useEffect(() => {
     try {
-      localStorage.setItem("ledger-reviews-v3", JSON.stringify(reviews));
+      localStorage.setItem("ledger-reviews-v4", JSON.stringify(reviews));
     } catch (e) {
     }
   }, [reviews]);
   useEffect(() => {
     try {
-      localStorage.setItem("ledger-ui-v1", JSON.stringify(ui));
+      localStorage.setItem("ledger-ui-v2", JSON.stringify(ui));
     } catch (e) {
     }
   }, [ui]);
