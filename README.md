@@ -4,6 +4,8 @@ Ledger is a desktop recruiter workspace for reviewing design-engineering submiss
 
 Live site: https://mehatey.github.io/ledger-candidate-showcase/
 
+UX process PDF: [Ledger UX Process](output/pdf/Ledger-UX-Process-Siddharth-Mehta.pdf)
+
 ## Recruiter journey
 
 1. **Home** opens with Rina's workload, a short Ledger guide, search, status filters, sorting, and a priority queue. Completed reviews remain visible for auditability.
